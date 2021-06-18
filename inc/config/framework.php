@@ -34,6 +34,57 @@ CSF::createSection(CCT_OPTIONS, [
             'title'     => esc_html__('Logo Header Mobile', 'cct-helper'),
         ],
         [
+            'id'        => 'cct_logo_phone',
+            'type'      => 'media',
+            'title'     => esc_html__('Logo Dark Phone', 'cct-helper'),
+        ],
+        array(
+            'id' => 'text_logo_phone',
+            'type' => 'text',
+            'title' => esc_html__('Text phone', 'cct-helper'),
+            'default' => '伊勢崎本店:',
+        ),
+        array(
+            'id' => 'number_logo_phone',
+            'type' => 'text',
+            'title' => esc_html__('Number phone', 'cct-helper'),
+            'default' => '0270-61-9899',
+        ),
+        [
+            'id'        => 'cct_logo_time',
+            'type'      => 'media',
+            'title'     => esc_html__('Logo Dark Time', 'cct-helper'),
+        ],
+        array(
+            'id' => 'text_logo_time',
+            'type' => 'text',
+            'title' => esc_html__('Text time', 'cct-helper'),
+            'default' => '受付時間:',
+        ),
+        array(
+            'id' => 'number_logo_time',
+            'type' => 'text',
+            'title' => esc_html__('Number time', 'cct-helper'),
+            'default' => '9:00～17:00(平日):',
+        ),
+        array(
+            'id' => 'placeholder_search',
+            'type' => 'text',
+            'title' => esc_html__('Placeholder search', 'cct-helper'),
+            'default' => '検索キーワードを入力',
+        ),
+        array(
+            'id' => 'text_support_update',
+            'type' => 'text',
+            'title' => esc_html__('Text Support & Update', 'cct-helper'),
+        ),
+        array(
+            'id' => 'placeholder_category',
+            'type' => 'text',
+            'title' => esc_html__('Placeholder category', 'cct-helper'),
+            'default' => '全カテゴリー',
+        ),
+        [
             'id'    => 'cct_header_sticky',
             'type'  => 'switcher',
             'title' => 'Header fixed',
