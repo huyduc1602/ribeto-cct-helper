@@ -291,20 +291,6 @@ CSF::createSection(CCT_OPTIONS, [
             ),
         ),
 
-
-
-
-
-        [
-            'id' => 'cct_footer_about',
-            'type' => 'textarea',
-            'title' => esc_html__('About Text', 'cct-helper'),
-        ],
-        [
-            'id' => 'cct_footer_title_col_2',
-            'type' => 'text',
-            'title' => esc_html__('Userful Links Title', 'cct-helper'),
-        ],
         [
             'id' => 'cct_footer_select_menu_col_2',
             'type' => 'select',
@@ -316,17 +302,6 @@ CSF::createSection(CCT_OPTIONS, [
                 'footer-menu' => 'Footer Menu',
             ),
             'default' => 'footer-menu'
-        ],
-        [
-            'id' => 'cct_footer_title_col_3',
-            'type' => 'text',
-            'title' => esc_html__('Top Post Title', 'cct-helper'),
-        ],
-        [
-            'id' => 'cct_footer_editor_col_3',
-            'type' => 'wp_editor',
-            'title' => esc_html__('Top Post Text', 'cct-helper'),
-            'sanitize' => false,
         ],
         [
             'id' => 'cct_footer_background_absolute',
