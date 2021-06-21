@@ -251,13 +251,13 @@ CSF::createSection(CCT_OPTIONS, [
             'title' => esc_html__('Follow Us', 'cct-helper'),
         ],
         array(
-            'id'    => 'cct_footer_icon_fb',
-            'type'  => 'icon',
+            'id' => 'cct_footer_icon_fb',
+            'type' => 'icon',
             'title' => 'Icon Facebook',
         ),
         array(
-            'id'    => 'cct_footer_icon_tw',
-            'type'  => 'icon',
+            'id' => 'cct_footer_icon_tw',
+            'type' => 'icon',
             'title' => 'Icon twitter',
         ),
 
@@ -279,17 +279,46 @@ CSF::createSection(CCT_OPTIONS, [
             'title' => esc_html__('Title Col 4', 'cct-helper'),
         ],
         array(
-            'id'        => 'opt-group-footer-col-4-info',
-            'type'      => 'group',
-            'title'     => 'Group link info',
-            'fields'    => array(
+            'id' => 'opt-group-footer-col-4-info',
+            'type' => 'group',
+            'title' => 'Group link info',
+            'fields' => array(
                 array(
-                    'id'    => 'opt-link-footer',
-                    'type'  => 'link',
+                    'id' => 'opt-link-footer',
+                    'type' => 'link',
                     'title' => 'Link',
                 ),
             ),
         ),
+
+        [
+            'id' => 'cct_logo_phone1',
+            'type' => 'media',
+            'title' => esc_html__('Logo phone 1', 'cct-helper'),
+        ],
+        [
+            'id' => 'cct_logo_time1',
+            'type' => 'media',
+            'title' => esc_html__('Logo time 1', 'cct-helper'),
+        ],
+
+        [
+            'id' => 'cct_logo_email1',
+            'type' => 'media',
+            'title' => esc_html__('Logo email 1', 'cct-helper'),
+        ],
+
+        array(
+            'id' => 'text_title_mail1',
+            'type' => 'text',
+            'title' => esc_html__('Text title mail', 'cct-helper'),
+        ),
+        array(
+            'id' => 'placeholder_mail1',
+            'type' => 'text',
+            'title' => esc_html__('Placeholder mail', 'cct-helper'),
+        ),
+
 
         [
             'id' => 'cct_footer_select_menu_col_2',
@@ -562,8 +591,8 @@ CSF::createSection(CCT_OPTIONS, [
             'default' => '2021年05月19日に発注されたご注文No.#2700 は処理中です。'
         ],
         array(
-            'id'    => 'opt-link-1000',
-            'type'  => 'link',
+            'id' => 'opt-link-1000',
+            'type' => 'link',
             'title' => 'Link kkkk',
         ),
 
