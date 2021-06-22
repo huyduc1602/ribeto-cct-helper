@@ -189,7 +189,7 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
 			[
 				'name' => 'typography',
 				'label' => __( 'Typography', 'elementor' ),
-				'scheme' => Scheme_Typography::TYPOGRAPHY_4,
+				'scheme' => Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} a.btn-slider',
 			]
 		);
@@ -221,8 +221,8 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
 				'label' => __( 'Background Color', 'elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
+					'type' => Color::get_type(),
+					'value' => Color::COLOR_4,
 				],
                 'default' => '#e01d19',
 				'selectors' => [

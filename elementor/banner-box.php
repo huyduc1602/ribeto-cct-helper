@@ -91,7 +91,7 @@ class CCT_Elementor_Banner_Box extends \Elementor\Widget_Base {
 			[
 				'name' => 'typography',
 				'label' => __( 'Typography', 'elementor' ),
-				'scheme' => Scheme_Typography::TYPOGRAPHY_4,
+				'scheme' => Typography::TYPOGRAPHY_4,
 				'selector' => '{{WRAPPER}} a.btn-banner',
 			]
 		);
@@ -123,8 +123,8 @@ class CCT_Elementor_Banner_Box extends \Elementor\Widget_Base {
 				'label' => __( 'Background Color', 'elementor' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_4,
+					'type' => Color::get_type(),
+					'value' => Color::COLOR_4,
 				],
                 'default' => '#fff',
 				'selectors' => [
@@ -147,6 +147,7 @@ class CCT_Elementor_Banner_Box extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Text Color', 'elementor' ),
 				'type' => Controls_Manager::COLOR,
+				'default'=> '#fff',
 				'selectors' => [
 					'{{WRAPPER}} a.btn-banner:hover, {{WRAPPER}} .btn-banner:hover' => 'color: {{VALUE}};',
 				],
@@ -158,6 +159,7 @@ class CCT_Elementor_Banner_Box extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Background Color', 'elementor' ),
 				'type' => Controls_Manager::COLOR,
+				'default'=> '#e01d19',
 				'selectors' => [
 					'{{WRAPPER}} a.btn-banner:hover, {{WRAPPER}} .btn-banner:hover' => 'background-color: {{VALUE}};',
 				],
@@ -247,7 +249,7 @@ class CCT_Elementor_Banner_Box extends \Elementor\Widget_Base {
             $html[] = '<div class="banner-box">
 			<div class="container">
 				<img src="'.$settings['image']['url'].'" alt="Snow" style="width:100%;">
-  				<div class="banner-box-button"><a class="btn btn-banner">コスメ化粧品</a></div>
+  				<div class="banner-box-button"><a class="btn btn-banner" href="'.$settings['button_link'].'">コスメ化粧品</a></div>
 			</div>
 		</div>';
 
