@@ -5,16 +5,16 @@ use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
 
 
-class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
+class CCT_Elementor_Widget_How_To_Shopping extends \Elementor\Widget_Base
 {
     public function get_name()
     {
-        return 'how_to_shopping_2';
+        return 'how_to_shopping';
     }
 
     public function get_title()
     {
-        return esc_html__('How To Shopping Style 2', 'cct-helper');
+        return esc_html__('Ribeto How To Shopping', 'ribeto-helper');
     }
 
     public function get_icon()
@@ -24,20 +24,20 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
 
     public function get_categories()
     {
-        return ['cct-base'];
+        return ['ribeto-base'];
     }
     protected function _register_controls() {
         $this->start_controls_section(
             'section_title_label',
             [
-                'label' => esc_html__('Title_label', 'cct-helper'),
+                'label' => esc_html__('Title_label', 'ribeto-helper'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
         $this->add_control(
             'title',
             [
-                'label' => esc_html__('Title', 'cct-helper'),
+                'label' => esc_html__('Title', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => '4つの簡単なステップ'
             ]
@@ -45,7 +45,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_control(
 			'bg-image',
 			[
-				'label' => __( 'Choose Background Image', 'cct-helper' ),
+				'label' => __( 'Choose Background Image', 'ribeto-helper' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -58,7 +58,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Content', 'cct-helper' ),
+                'label' => esc_html__( 'Content', 'ribeto-helper' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -67,7 +67,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $repeater->add_control(
             'image',
             [
-                'label' => esc_html__('Choose Avatar', 'cct-helper'),
+                'label' => esc_html__('Choose Avatar', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -77,61 +77,60 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $repeater->add_control(
             'title',
             [
-                'label' => esc_html__('Title', 'cct-helper'),
+                'label' => esc_html__('Title', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__('Stunning Design', 'cct-helper'),
+                'default' => esc_html__('Stunning Design', 'ribeto-helper'),
             ]
         );
         $repeater->add_control(
             'description',
             [
-                'label' => esc_html__('Description', 'cct-helper'),
+                'label' => esc_html__('Description', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => esc_html__('We offer beautiful and unique themes to help you build a website with professional layouts and amazing look for your bussiness.', 'cct-helper'),
+                'default' => esc_html__('We offer beautiful and unique themes to help you build a website with professional layouts and amazing look for your bussiness.', 'ribeto-helper'),
             ]
         );
-        $image_path = get_template_directory().'images/fontend/homepage/';
         
         $this->add_control(
             'list',
             [
-                'label' => esc_html__('List of step', 'cct-helper'),
+                'label' => esc_html__('List of step', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'tab_title' => esc_html__('1. 売りたい商品を選択・カートへ', 'cct-helper'),
-                        'title' => esc_html__('1. 売りたい商品を選択・カートへ', 'cct-helper'),
-                        'description' => esc_html__('幅広い商品を買取しております。商品一覧はそれぞれのページでチェックできます。', 'cct-helper'),
+                        'tab_title' => esc_html__('1. 売りたい商品を選択・カートへ', 'ribeto-helper'),
+                        'title' => esc_html__('1. 売りたい商品を選択・カートへ', 'ribeto-helper'),
+                        'description' => esc_html__('幅広い商品を買取しております。商品一覧はそれぞれのページでチェックできます。', 'ribeto-helper'),
                     ],
                     [
-                        'tab_title' => esc_html__('2. お客様情報を入力', 'cct-helper'),
-                        'title' => esc_html__('2. お客様情報を入力', 'cct-helper'),
-                        'description' => esc_html__('お客様のご連絡先情報の入力をお願いします。', 'cct-helper'),
+                        'tab_title' => esc_html__('2. お客様情報を入力', 'ribeto-helper'),
+                        'title' => esc_html__('2. お客様情報を入力', 'ribeto-helper'),
+                        'description' => esc_html__('お客様のご連絡先情報の入力をお願いします。', 'ribeto-helper'),
                     ],
                     [
-                        'tab_title' => esc_html__('3. 支払い方法を選択', 'cct-helper'),
-                        'title' => esc_html__('3. 支払い方法を選択', 'cct-helper'),
-                        'description' => esc_html__('買取した商品は、お客様のご希望に合わせてお支払いさせていただきます。', 'cct-helper'),
+                        'tab_title' => esc_html__('3. 支払い方法を選択', 'ribeto-helper'),
+                        'title' => esc_html__('3. 支払い方法を選択', 'ribeto-helper'),
+                        'description' => esc_html__('買取した商品は、お客様のご希望に合わせてお支払いさせていただきます。', 'ribeto-helper'),
                     ],
                     [
-                        'tab_title' => esc_html__('4. 注文を確定する', 'cct-helper'),
-                        'title' => esc_html__('4. 注文を確定する', 'cct-helper'),
-                        'description' => esc_html__('注文を確定してから24時間以内にご連絡をさせていただきます。', 'cct-helper'),
+                        'tab_title' => esc_html__('4. 注文を確定する', 'ribeto-helper'),
+                        'title' => esc_html__('4. 注文を確定する', 'ribeto-helper'),
+                        'description' => esc_html__('注文を確定してから24時間以内にご連絡をさせていただきます。', 'ribeto-helper'),
                     ],
                 ],
                 'title_field' => '{{{ tab_title }}}',
             ]
         );
-        $gallery_columns = range(2, 6);
+        $gallery_columns = [2,3,4,6];
         $gallery_columns = array_combine($gallery_columns, $gallery_columns);
 
         $this->add_control(
             'number_column',
             [
-                'label' => esc_html__('Columns', 'cct-helper'),
+                'label' => esc_html__('Columns', 'ribeto-helper'),
                 'type' => Controls_Manager::SELECT,
-                'default' => 5,
+                'default' => 4,
                 'options' => $gallery_columns,
             ]
         );
@@ -140,7 +139,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_control(
             'style_box_item',
             [
-                'label' => esc_html__('Block type', 'cct-helper'),
+                'label' => esc_html__('Block type', 'ribeto-helper'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'Row',
                 'options' => $gallery_style_box_item,
@@ -151,7 +150,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->start_controls_section(
             'section_style_title_label',
             [
-                'label' => esc_html__('Title_Label','cct-helper'),
+                'label' => esc_html__('Title_Label','ribeto-helper'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -164,11 +163,22 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
             ]
         );
 
-
+        $this->add_responsive_control(
+            'item_margin',
+            [
+                'label' => esc_html__('Tile Label Margin', 'ribeto-helper'),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .box-title-heading' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'separator' => 'before',
+            ]
+        );
         $this->add_control(
             'title_label_color',
             [
-                'label'		=> esc_html__('Color', 'cct-helper'),
+                'label'		=> esc_html__('Color', 'ribeto-helper'),
                 'type'		=> \Elementor\Controls_Manager::COLOR,
                 'selectors'	=> [
                     '{{WRAPPER}} .box-title-heading ' => 'color: {{VALUE}}'
@@ -179,7 +189,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_control(
             'title_lebel_background_color',
             [
-                'label' => esc_html__('Background', 'cct-helper'),
+                'label' => esc_html__('Background', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .box-title' => 'background-color: {{VALUE}};',
@@ -193,7 +203,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->start_controls_section(
             'section_style_content',
             [
-                'label' => esc_html__('Content','cct-helper'),
+                'label' => esc_html__('Content','ribeto-helper'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -201,7 +211,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_control(
             'heading_content_title_style',
             [
-                'label' => esc_html__( 'Title', 'cct-helper' ),
+                'label' => esc_html__( 'Title', 'ribeto-helper' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -219,7 +229,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_control(
             'content_title_color',
             [
-                'label'		=> esc_html__('Color', 'cct-helper'),
+                'label'		=> esc_html__('Color', 'ribeto-helper'),
                 'type'		=> \Elementor\Controls_Manager::COLOR,
                 'selectors'	=> [
                     '{{WRAPPER}} .box-item-textbox-heading ' => 'color: {{VALUE}}'
@@ -229,23 +239,23 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'align_content_title',
             [
-                'label' => esc_html__('Alignment', 'cct-helper'),
+                'label' => esc_html__('Alignment', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'cct-helper'),
+                        'title' => esc_html__('Left', 'ribeto-helper'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'cct-helper'),
+                        'title' => esc_html__('Center', 'ribeto-helper'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'cct-helper'),
+                        'title' => esc_html__('Right', 'ribeto-helper'),
                         'icon' => 'eicon-text-align-right',
                     ],
                     'justify' => [
-                        'title' => esc_html__('Justified', 'cct-helper'),
+                        'title' => esc_html__('Justified', 'ribeto-helper'),
                         'icon' => 'eicon-text-align-justify',
                     ],
                 ],
@@ -258,7 +268,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_control(
             'heading_content_descrition_style',
             [
-                'label' => esc_html__( 'Description', 'cct-helper' ),
+                'label' => esc_html__( 'Description', 'ribeto-helper' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -276,7 +286,7 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_control(
             'descrition_color',
             [
-                'label'		=> esc_html__('Color', 'cct-helper'),
+                'label'		=> esc_html__('Color', 'ribeto-helper'),
                 'type'		=> \Elementor\Controls_Manager::COLOR,
                 'selectors'	=> [
                     '{{WRAPPER}} .box-item-textbox-description ' => 'color: {{VALUE}}'
@@ -286,23 +296,23 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'align_content_descrition',
             [
-                'label' => esc_html__('Alignment', 'cct-helper'),
+                'label' => esc_html__('Alignment', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'cct-helper'),
+                        'title' => esc_html__('Left', 'ribeto-helper'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'cct-helper'),
+                        'title' => esc_html__('Center', 'ribeto-helper'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'cct-helper'),
+                        'title' => esc_html__('Right', 'ribeto-helper'),
                         'icon' => 'eicon-text-align-right',
                     ],
                     'justify' => [
-                        'title' => esc_html__('Justified', 'cct-helper'),
+                        'title' => esc_html__('Justified', 'ribeto-helper'),
                         'icon' => 'eicon-text-align-justify',
                     ],
                 ],
@@ -322,12 +332,12 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
 
          $html = array();
          if($settings['style_box_item'] == 'Row'){
-            $html[] = '<div id="how-to-shopping-2" class="how-to-shopping">';
+            $html[] = '<div id="how-to-shopping-2" style="background:url('.$settings['bg-image']['url'].')" class="how-to-shopping">';
          }else{
-            $html[] = '<div id="how-to-shopping-1" class="how-to-shopping">';
+            $html[] = '<div id="how-to-shopping-1" style="background:url('.$settings['bg-image']['url'].')" class="how-to-shopping">';
          }
         
-         $html[] = '<div class="container" style="background:url('.$settings['bg-image']['url'].') no-repeat center;">';
+         $html[] = '<div class="container">';
          $html[] = '<div class="box-title">';
          $html[] = '<div class="arrow-left"></div>';
          $html[] = '<div class="arrow-right"></div>';
@@ -339,8 +349,25 @@ class CCT_Elementor_Widget_How_To_Shopping_2 extends \Elementor\Widget_Base
          $html[] = '</div>';
          $html[] = '<div class="row">';
          foreach (  $settings['list'] as $item ) {
-         $html[] = '<div class="item-content-'.$settings['number_column'].' box-item">
-         <div class="box-item-image">
+         $number_column = $settings['number_column'];
+         switch($number_column){
+             case '2':
+                $html[] = '<div class="col-md-6 col-sm-6 col-xs-12 box-item">';
+             break;
+             case '3':
+                $html[] = '<div class="col-md-4 col-sm-6 col-xs-12 box-item">';
+                break;
+            case '4':
+                $html[] = '<div class="col-md-3 col-sm-6 col-xs-12 box-item">';
+               break;
+            case '6':
+                $html[] = '<div class="col-md-2 col-sm-6 col-xs-12 box-item">';
+                break;
+            default:
+                $html[] = '<div class="col-md-3 col-sm-6 col-xs-12 box-item">';
+                break;
+         }
+         $html[] = '<div class="box-item-image">
             <img src="'. $item['image']['url'] .'">
          </div>
             <div class="box-item-textbox">
