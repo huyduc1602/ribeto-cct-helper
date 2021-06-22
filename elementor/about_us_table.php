@@ -97,9 +97,9 @@ class CCT_Elementor_Widget_About_Us_Table extends \Elementor\Widget_Base
         $this->add_control(
             'color_title',
             [
-                'label'		=> esc_html__('Title Product Color', 'cct-helper'),
-                'type'		=> \Elementor\Controls_Manager::COLOR,
-                'selectors'	=> [
+                'label'     => esc_html__('Title Product Color', 'cct-helper'),
+                'type'      => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
                     '{{WRAPPER}} .item-content-table-title' => 'color: {{VALUE}}'
                 ]
             ]
@@ -122,9 +122,9 @@ class CCT_Elementor_Widget_About_Us_Table extends \Elementor\Widget_Base
         $this->add_control(
             'color_desc',
             [
-                'label'		=> esc_html__('Desc Color', 'cct-helper'),
-                'type'		=> \Elementor\Controls_Manager::COLOR,
-                'selectors'	=> [
+                'label'     => esc_html__('Desc Color', 'cct-helper'),
+                'type'      => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
                     '{{WRAPPER}} .item-content-table-desc' => 'color: {{VALUE}}'
                 ]
             ]
