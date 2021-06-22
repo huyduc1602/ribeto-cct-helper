@@ -626,7 +626,7 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
     </ul>
     <!-- start tab -->
     <div class="tab-content">
-    <div id="purchase" class="tab-pane fade in active">
+    <div id="purchase" class="tab-pane fade in active show">
     <?php
     foreach ( $settings['tabs_purchase'] as $index => $item ) :
     $tab_count = $index + 1;
@@ -678,16 +678,13 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
     </div>
     <div class="line"></div>
     <div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); ?>><?php echo $this->parse_text_editor( $item['tab_content'] ); ?></div>
-</div>
-
+    </div>
 
 <?php endforeach; ?>
                     </div>
-                </div>
                  <!-- endtab -->
 
                  <!-- start tab -->
-    <div class="tab-content">
     <div id="payment" class="tab-pane fade">
     <?php
     foreach ( $settings['tabs_purchase'] as $index => $item ) :
