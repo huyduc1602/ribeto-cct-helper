@@ -80,6 +80,7 @@ if (!class_exists('CCT_Elementor')) {
 
             require_once $patch . '/about_us_table.php';
 
+            require_once $patch . '/how-to-buy-page.php';
             //Widget Ribeto
             require_once $patch . '/how-to-shopping.php';
             require_once $patch . '/slider.php';
@@ -129,6 +130,7 @@ if (!class_exists('CCT_Elementor')) {
 
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_About_Us_Table());
 
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_How_To_Buy());
             //Widget Ribeto
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_How_To_Shopping());
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Slider());
