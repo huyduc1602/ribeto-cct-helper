@@ -88,6 +88,7 @@ if (!class_exists('CCT_Elementor')) {
             require_once $patch . '/product-base.php';
             require_once $patch . '/product-swiper.php';
             require_once $patch . '/faqs.php';
+            require_once $patch . '/contact-fileds.php';
 
 			// Register widget
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \ CCT_Widget_Info_Headding());
@@ -137,8 +138,11 @@ if (!class_exists('CCT_Elementor')) {
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Banner_Box());
             // \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_Products_Base());
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_Products_Swiper());
+
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_FAQS());
-		}
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_Contact());
+
+        }
 	}
 
 	new CCT_Elementor();
