@@ -6,8 +6,8 @@ use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
-use Elementor\Scheme_Typography;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Typography;
+use Elementor\Core\Schemes\Color;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 
@@ -134,7 +134,7 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'typography_title',
-                'selector' => '{{WRAPPER}} .main-title h1',
+                'selector' => '{{WRAPPER}} .slider-content-box-text-title',
             ]
         );
         $this->add_control(
@@ -143,7 +143,7 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
                 'label'		=> esc_html__('Title Color', 'ribeto-helper'),
                 'type'		=> \Elementor\Controls_Manager::COLOR,
                 'selectors'	=> [
-                    '{{WRAPPER}} .main-title h1' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .slider-content-box-text-title' => 'color: {{VALUE}}'
                 ]
             ]
         );
@@ -159,7 +159,7 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'typography_desc',
-                'selector' => '{{WRAPPER}} .item-desc p',
+                'selector' => '{{WRAPPER}} .slider-content-box-text-descrition',
             ]
         );
         $this->add_control(
@@ -168,7 +168,7 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
                 'label'		=> esc_html__('Description Color', 'ribeto-helper'),
                 'type'		=> \Elementor\Controls_Manager::COLOR,
                 'selectors'	=> [
-                    '{{WRAPPER}} .item-desc p' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .slider-content-box-text-descrition' => 'color: {{VALUE}}'
                 ]
             ]
         );
@@ -370,4 +370,34 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
         $html[] = '</div></div>';
         echo implode('', $html);
     }
+
+	protected function _content_template() {
+		?>
+		<# if ( settings.list.length ) { #>
+		<dl>
+        <div id="slider">
+
+        <div  class="owl-carousel owl-theme slider-carousel">
+			<# _.each( settings.list, function( item ) { #>
+        <div class="item">
+		        <div class="slider-content-box-container" >';
+                    <img src="{{{ item.image.url }}}" style="position: relative;">
+                    <div class="slider-content-box">
+                        <div class="slider-content-box-text">
+	                        <h2 class="slider-content-box-text-title">{{{ item.list_title }}}</h2>
+	                        <h4 class="slider-content-box-text-descrition">{{{ item.item_description }}}</h4>	                       
+                    	</div>
+                    	 <div class="slider-content-box-button">
+                            <a class="btn btn-slider" href="{{{ item.button_link }}}">{{{ item.button_title }}}</a>
+                         </div>
+                    </div>
+                </div>
+        </div>
+			<# }); #>
+            </div>
+        </div>
+			</dl>
+		<# } #>
+		<?php
+	}
 }

@@ -29,7 +29,23 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
     }   
 
     protected function _register_controls_query() {
+        $this->start_controls_section(
+            'section_title_label',
+            [
+                'label' => esc_html__('Title_label', 'ribeto-helper'),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+        $this->add_control(
+            'title',
+            [
+                'label' => esc_html__('Title', 'ribeto-helper'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => '強化買取'
+            ]
+        );
 
+        $this->end_controls_section();
         $this->start_controls_section(
             'query',
             [
@@ -54,6 +70,57 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
 
     protected function _register_controls_styles() {
         $this->start_controls_section(
+            'section_style_title_label',
+            [
+                'label' => esc_html__('Title_Label','ribeto-helper'),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'typography_title_label',
+                'selector' => '{{WRAPPER}} .title-swiper ',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'item_margin',
+            [
+                'label' => esc_html__('Tile Label Margin', 'ribeto-helper'),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .title-swiper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'separator' => 'before',
+            ]
+        );
+        $this->add_control(
+            'title_label_color',
+            [
+                'label'		=> esc_html__('Color', 'ribeto-helper'),
+                'type'		=> \Elementor\Controls_Manager::COLOR,
+                'selectors'	=> [
+                    '{{WRAPPER}} .title-swiper ' => 'color: {{VALUE}}'
+                ]
+            ]
+        );
+        
+        $this->add_control(
+            'title_lebel_background_color',
+            [
+                'label' => esc_html__('Background', 'ribeto-helper'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .title-swiper' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+        
+        $this->end_controls_section();
+        $this->start_controls_section(
             'box_text_style',
             [
                 'label' => __('Box Text', 'ribeto-helper'),
@@ -62,16 +129,16 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
         );
 
         $this->add_control(
-            'title_heading',
+            'product_name_heading',
             [
-                'label' => __( 'Title', 'ribeto-helper'),
+                'label' => __( 'Product Name', 'ribeto-helper'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
         );
 
         $this->add_responsive_control(
-            'title_align',
+            'product_name_align',
             [
                 'label' => __( 'Alignment', 'ribeto-helper'),
                 'type' => Controls_Manager::CHOOSE,
@@ -101,7 +168,7 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
         );
 
         $this->add_responsive_control(
-            'title_spacing_bottom',
+            'product_name_bottom',
             [
                 'label' => __( 'Spacing', 'ribeto-helper'),
                 'type' => Controls_Manager::SLIDER,
@@ -118,7 +185,7 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
         );
 
         $this->add_control(
-            'title_color',
+            'product_name_color',
             [
                 'label' => __( 'Color', 'ribeto-helper'),
                 'type' => Controls_Manager::COLOR,
@@ -263,7 +330,7 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'title_typography',
+                'name' => 'title_typography_stock',
                 'selector' => '.elementor-ctwp_products-wrapper .woocommerce-loop-product__stock',
                 'scheme' => Schemes\Typography::TYPOGRAPHY_1,
             ]
@@ -283,7 +350,7 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
             [
                 'label' => __( 'Color', 'ribeto-helper'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '',
+                'default' => '#F1C300',
                 'selectors' => [
                     '.elementor-ctwp_products-wrapper .woocommerce-loop-product__stock' => 'color: {{VALUE}};',
                 ],
@@ -378,9 +445,10 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
     protected function ctwp_template($wc_query,$swiper) {
         $settings = $this->get_settings_for_display();
         ?>
+        <div class="title-swiper"><i class="fas fa-dot-circle"></i><h2><?php echo $settings['title'] ?></h2></div>
             <div <?php echo isset($settings['slides_per_view_mobile']) ? 'data-limit-mobile='.$settings['slides_per_view_mobile'].' ' : ''; echo isset($settings['slides_per_view_tablet']) ? 'data-limit-tablet='.$settings['slides_per_view_tablet'] . ' ' : '';echo isset($settings['slides_per_view']) ? 'data-limit-desktop='.$settings['slides_per_view'] . ' ' : '' ?> class="elementor-ctwp_products-wrapper<?php echo ( $swiper == true ) ? " swiper swiper-container" : ""; ?>">
                 <?php if ($swiper === true): ?>
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper">                   
                 <?php else: ?>
                     <div class="container">
                     <div class="row">
@@ -411,11 +479,16 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
                         endwhile;
                             wp_reset_postdata();
                     else:  ?>
-                        <p><?php _e( 'No Products' );?></p> 
+                        <p style="display:block;margin:0 auto"><?php _e( 'No Products' );?></p> 
                     <?php endif; ?>
                 <?php if ($swiper === true): ?>
                     </div>
-                    <div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div>
+                    <div class="swiper-button-nav">
+                        <div class="swiper-pagination"></div>
+                        <button class="swiper-button-prev"><i class="fas fa-arrow-left"></i></button>
+                        <button class="swiper-button-next"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+
                 <?php else: ?>
                     </div>
                     </div>
