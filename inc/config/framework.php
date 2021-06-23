@@ -90,23 +90,27 @@ CSF::createSection(CCT_OPTIONS, [
             'type' => 'media',
             'title' => esc_html__('Icon cate 1', 'cct-helper'),
         ],
-        array(
-            'id' => 'icon-group-cate',
-            'type' => 'group',
-            'title' => 'Icon Category group',
-            'fields' => array(
-                [
-                    'id' => 'cct_icon_cate',
-                    'type' => 'media',
-                    'title' => esc_html__('Icon category', 'cct-helper'),
-                ],
-            ),
-        ),
         [
             'id' => 'cct_img_breadcrumb',
             'type' => 'media',
             'title' => esc_html__('Img breadcrumb', 'cct-helper'),
         ],
+
+
+        array(
+            'id'          => 'cct_get_cate_all',
+            'type'        => 'select',
+            'title'     => esc_html__('Select the product category to display', 'cct-helper'),
+            'options'     => 'categories',
+            'chosen'      => true,
+            'ajax'        => false,
+            'multiple'    => true,
+            'class'       => 'require',
+            'query_args'  => array(
+                'taxonomy'  => 'product_cat',
+                'posts_per_page' => -1
+            ),
+        ),
         [
             'id' => 'cct_header_sticky',
             'type' => 'switcher',
