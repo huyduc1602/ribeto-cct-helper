@@ -23,13 +23,14 @@ if (!class_exists('CCT_Elementor')) {
 				]
 			);
             $elements_manager->add_category(
-				'ribeto-base',
-				[
-					'title' => esc_html__('Ribeto', 'ribeto-helper'),
-					'icon' => 'fa fa-plug',
-				]
-			);
-		}
+                'ribeto-base',
+                [
+                    'title' => esc_html__('Ribeto', 'ribeto-helper'),
+                    'icon' => 'fa fa-plug',
+                ]
+            );
+
+    }
 
 		public static function remove_default_widget($widget_manager) {
 			//$widget_manager->unregister_widget_type('button');
@@ -79,17 +80,15 @@ if (!class_exists('CCT_Elementor')) {
 
             require_once $patch . '/about_us_table.php';
 
+            require_once $patch . '/how-to-buy-page.php';
             //Widget Ribeto
             require_once $patch . '/how-to-shopping.php';
             require_once $patch . '/slider.php';
             require_once $patch . '/banner-box.php';
             require_once $patch . '/product-base.php';
             require_once $patch . '/product-swiper.php';
-           
-
-
-
-
+            require_once $patch . '/faqs.php';
+            require_once $patch . '/contact-fileds.php';
 
 			// Register widget
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \ CCT_Widget_Info_Headding());
@@ -132,17 +131,18 @@ if (!class_exists('CCT_Elementor')) {
 
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_About_Us_Table());
 
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_How_To_Buy());
             //Widget Ribeto
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_How_To_Shopping());
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Slider());
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Banner_Box());
             // \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_Products_Base());
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_Products_Swiper());
-            
 
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_FAQS());
+            \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \CCT_Elementor_Widget_Contact());
 
-
-		}
+        }
 	}
 
 	new CCT_Elementor();

@@ -47,6 +47,49 @@ if(!function_exists('cct_list_menu_registered')) {
 }
 
 if(!function_exists('ctwpGetAllPostsSelect2')):
+function ctwpGetAllPostsSelect2($post_type='post') {
+    $arr = array();
+    $posts = get_posts(array(
+        'post_type' => $post_type,
+        'posts_per_page' => 20,
+        'order' => 'DESC',
+        'orderby' => 'date',
+    ));
+    if (!empty($posts)) {
+        foreach ($posts as $post) {
+            $arr[$post->ID] = $post->post_title;
+        }
+    }
+    return $arr;
+}
+endif;
+if(!function_exists('ctwpGetAllCategoriesSelect2')):
+function ctwpGetAllCategoriesSelect2($taxonomy='category') {
+    $arr = array();
+    $terms = get_terms( array(
+        'taxonomy' => $taxonomy,
+        'hide_empty' => false,
+    ) );
+    if (!empty($terms)) {
+        foreach ($terms as $category) {
+            $arr[$category->term_id] = $category->name;
+        }
+    }
+    return $arr;
+}
+endif;
+if(!function_exists('ctwpStringLimitWords')):
+function ctwpStringLimitWords($string, $word_limit) {
+    $words = explode(' ', $string, ($word_limit + 1));
+    if(count($words) > $word_limit)
+        array_pop($words);
+    return implode(' ', $words);
+}
+endif;
+
+
+//FUNCTION SWIPER
+if(!function_exists('ctwpGetAllPostsSelect2')):
 	function ctwpGetAllPostsSelect2($post_type='post') {
 		$arr = array();
 		$posts = get_posts(array(
@@ -62,28 +105,27 @@ if(!function_exists('ctwpGetAllPostsSelect2')):
 		}
 		return $arr;
 	}
-endif;
-if(!function_exists('ctwpGetAllCategoriesSelect2')):
-function ctwpGetAllCategoriesSelect2($taxonomy='category') {
-	$arr = array();
-	$terms = get_terms( array(
-		'taxonomy' => $taxonomy,
-		'hide_empty' => false,
-	) );
-	if (!empty($terms)) {
-		foreach ($terms as $category) {
-			$arr[$category->term_id] = $category->name;
+	endif;
+	if(!function_exists('ctwpGetAllCategoriesSelect2')):
+	function ctwpGetAllCategoriesSelect2($taxonomy='category') {
+		$arr = array();
+		$terms = get_terms( array(
+			'taxonomy' => $taxonomy,
+			'hide_empty' => false,
+		) );
+		if (!empty($terms)) {
+			foreach ($terms as $category) {
+				$arr[$category->term_id] = $category->name;
+			}
 		}
+		return $arr;
 	}
-	return $arr;
-}
-endif;
-if(!function_exists('ctwpStringLimitWords')):
-function ctwpStringLimitWords($string, $word_limit) {
-	$words = explode(' ', $string, ($word_limit + 1));
-	if(count($words) > $word_limit)
-		array_pop($words);
-	return implode(' ', $words);
-}
-endif;
-
+	endif;
+	if(!function_exists('ctwpStringLimitWords')):
+	function ctwpStringLimitWords($string, $word_limit) {
+		$words = explode(' ', $string, ($word_limit + 1));
+		if(count($words) > $word_limit)
+			array_pop($words);
+		return implode(' ', $words);
+	}
+	endif;

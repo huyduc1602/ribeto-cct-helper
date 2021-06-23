@@ -485,10 +485,9 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
                     </div>
                     <div class="swiper-button-nav">
                         <div class="swiper-pagination"></div>
-                        <button class="swiper-button-prev"><i class="fas fa-arrow-left"></i></button>
-                        <button class="swiper-button-next"><i class="fas fa-arrow-right"></i></button>
+                        <button class="swiper-button-prev" style="background-image:none;width: 50px;height: 50px;background-color: #fff;border-radius: 50%;border:none;left:-12px"><i class="fas fa-arrow-left"></i></button>
+                        <button class="swiper-button-next" style="background-image:none;width: 50px;height: 50px;background-color: #fff;border-radius: 50%;border:none;right:-15px"><i class="fas fa-arrow-right"></i></button>
                     </div>
-
                 <?php else: ?>
                     </div>
                     </div>
