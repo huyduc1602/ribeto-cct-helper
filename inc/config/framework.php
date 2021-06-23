@@ -103,6 +103,11 @@ CSF::createSection(CCT_OPTIONS, [
             ),
         ),
         [
+            'id' => 'cct_img_breadcrumb',
+            'type' => 'media',
+            'title' => esc_html__('Img breadcrumb', 'cct-helper'),
+        ],
+        [
             'id' => 'cct_header_sticky',
             'type' => 'switcher',
             'title' => 'Header fixed',
