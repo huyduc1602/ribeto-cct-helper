@@ -135,64 +135,96 @@ CSF::createSection(CCT_OPTIONS, array(
 ));
 CSF::createSection(CCT_OPTIONS, array(
     'parent' => 'content',
-    'title' => esc_html__('Content-Single-Product', 'cct-helper'),
+    'title' => esc_html__('Content Single Product', 'cct-helper'),
     'fields' => array(
         array(
-            'id' => 'background-linkdemo-color',
-            'type' => 'color',
-            'title' => esc_html__('Background-linkdemo-color', 'cct-helper'),
-        ),
-        array(
-            'id' => 'background-linkdownload-color',
-            'type' => 'color',
-            'title' => esc_html__('Background-linkdownload-color', 'cct-helper'),
+            'id' => 'cct_single_product_title_sidebar',
+            'type' => 'text',
+            'title' => esc_html__('Single Product Title Sidebar', 'cct-helper'),
         ),
 
         array(
-            'id' => 'background-buynow-color',
-            'type' => 'color',
-            'title' => esc_html__('Background-buynow-color', 'cct-helper'),
+            'id'        => 'cct_single_product_buy',
+            'type'      => 'group',
+            'title'     => esc_html__('Single Product Step Sidebar', 'cct-helper'),
+            'fields'    => array(
+                array(
+                    'id'    => 'cct_single_product_title',
+                    'type'  => 'text',
+                    'title' => esc_html__('Single Product Title', 'cct-helper'),
+                ),
+
+                array(
+                    'id'    => 'cct_single_product_image',
+                    'type'  => 'media',
+                    'title' => esc_html__('Single Product Image', 'cct-helper'),
+                ),
+
+                array(
+                    'id'    => 'cct_single_product_description',
+                    'type'  => 'wp_editor',
+                    'title' => esc_html__('Single Product Description', 'cct-helper'),
+                ),
+            ),
         ),
-        array(
-            'id' => 'background-purchasenow-color',
-            'type' => 'color',
-            'title' => esc_html__('Background-purchasenow-color', 'cct-helper'),
-        ),
-        array(
-            'id' => 'icon-detail-document',
-            'type' => 'icon',
-            'title' => esc_html__('Icon Detail Document', 'cct-helper'),
-        ),
-        array(
-            'id' => 'icon-tutorials',
-            'type' => 'icon',
-            'title' => esc_html__('Icon Tutorials', 'cct-helper'),
-        ),
-        array(
-            'id' => 'icon-support-update',
-            'type' => 'icon',
-            'title' => esc_html__('Icon Support & Update', 'cct-helper'),
-        ),
-        array(
-            'id' => 'link-support-update',
-            'type' => 'text',
-            'title' => esc_html__('Link Support & Update', 'cct-helper'),
-        ),
-        array(
-            'id' => 'text_detail_document',
-            'type' => 'text',
-            'title' => esc_html__('Text Detail Document', 'cct-helper'),
-        ),
-        array(
-            'id' => 'text_support_update',
-            'type' => 'text',
-            'title' => esc_html__('Text Support & Update', 'cct-helper'),
-        ),
-        array(
-            'id' => 'text_tutorials',
-            'type' => 'text',
-            'title' => esc_html__('Text Tutorials', 'cct-helper'),
-        ),
+
+
+//        array(
+//            'id' => 'background-linkdemo-color',
+//            'type' => 'color',
+//            'title' => esc_html__('Background-linkdemo-color', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'background-linkdownload-color',
+//            'type' => 'color',
+//            'title' => esc_html__('Background-linkdownload-color', 'cct-helper'),
+//        ),
+//
+//        array(
+//            'id' => 'background-buynow-color',
+//            'type' => 'color',
+//            'title' => esc_html__('Background-buynow-color', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'background-purchasenow-color',
+//            'type' => 'color',
+//            'title' => esc_html__('Background-purchasenow-color', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'icon-detail-document',
+//            'type' => 'icon',
+//            'title' => esc_html__('Icon Detail Document', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'icon-tutorials',
+//            'type' => 'icon',
+//            'title' => esc_html__('Icon Tutorials', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'icon-support-update',
+//            'type' => 'icon',
+//            'title' => esc_html__('Icon Support & Update', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'link-support-update',
+//            'type' => 'text',
+//            'title' => esc_html__('Link Support & Update', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'text_detail_document',
+//            'type' => 'text',
+//            'title' => esc_html__('Text Detail Document', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'text_support_update',
+//            'type' => 'text',
+//            'title' => esc_html__('Text Support & Update', 'cct-helper'),
+//        ),
+//        array(
+//            'id' => 'text_tutorials',
+//            'type' => 'text',
+//            'title' => esc_html__('Text Tutorials', 'cct-helper'),
+//        ),
     ),
 ));
 CSF::createSection(CCT_OPTIONS, [
