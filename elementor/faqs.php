@@ -99,7 +99,7 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Title & Description', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__('Accordion Title', 'ribeto-helper'),
+                'default' => esc_html__('FAQ Title', 'ribeto-helper'),
                 'dynamic' => [
                     'active' => true,
                 ],
@@ -112,7 +112,7 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Content', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::WYSIWYG,
-                'default' => esc_html__('Accordion Content', 'ribeto-helper'),
+                'default' => esc_html__('FAQ Content', 'ribeto-helper'),
                 'show_label' => false,
             ]
         );
@@ -125,33 +125,16 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'tab_title' => esc_html__('Q．買い取り方法にはどのようなものがありますか？', 'ribeto-helper'),
-                        'tab_content' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
+                        'tab_title' => esc_html__('FAQ Item', 'ribeto-helper'),
+                        'tab_title_purchase' => esc_html__('Q．買取商品はサイトに掲載されている商品のみでしょうか？', 'ribeto-helper'),
+                        'tab_content_purchase' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
                     ],
                     [
-                        'tab_title' => esc_html__('Q．買取商品はサイトに掲載されている商品のみでしょうか？', 'ribeto-helper'),
-                        'tab_content' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
+                        'tab_title' => esc_html__('FAQ Item', 'ribeto-helper'),
+                        'tab_title_purchase' => esc_html__('Q．買取商品はサイトに掲載されている商品のみでしょうか？', 'ribeto-helper'),
+                        'tab_content_purchase' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
                     ],
-                    [
-                        'tab_title' => esc_html__('Q.商品の買い取りには予約が必要ですか？', 'ribeto-helper'),
-                        'tab_content' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
-                    ],
-                    [
-                        'tab_title' => esc_html__('Q.買い取りの際に必要なものはありますか？', 'ribeto-helper'),
-                        'tab_content' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
-                    ],
-                    [
-                        'tab_title' => esc_html__('Q.土日祝は営業していますか？', 'ribeto-helper'),
-                        'tab_content' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
-                    ],
-                    [
-                        'tab_title' => esc_html__('Q.郵送で送る場合、送料はどうすればいいですか？', 'ribeto-helper'),
-                        'tab_content' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
-                    ],
-                    [
-                        'tab_title' => esc_html__('Q.数量がケースロットに満たなくても買取してもらえますか？', 'ribeto-helper'),
-                        'tab_content' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
-                    ],
+                   
                 ],
                 'title_field' => '{{{ tab_title }}}',
             ]
@@ -267,12 +250,14 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'tab_title' => esc_html__('Accordion #1', 'ribeto-helper'),
-                        'tab_content' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'ribeto-helper'),
+                        'tab_title' => esc_html__('FAQ Item', 'ribeto-helper'),
+                        'tab_title_payment' => esc_html__('Q．買取商品はサイトに掲載さ れている商品のみでしょうか？', 'ribeto-helper'),
+                        'tab_content_payment' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
                     ],
                     [
-                        'tab_title' => esc_html__('Accordion #2', 'ribeto-helper'),
-                        'tab_content' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'ribeto-helper'),
+                        'tab_title' => esc_html__('FAQ Item', 'ribeto-helper'),
+                        'tab_title_payment' => esc_html__('Q．買取商品はサイトに掲載されている商品のみでしょうか？', 'ribeto-helper'),
+                        'tab_content_payment' => esc_html__('A.基本的には掲載商品のみとなりますが、お客様にて買取してほしい商品などが ございましたら一度ご相談ください。', 'ribeto-helper'),
                     ],
                 ],
                 'title_field' => '{{{ tab_title }}}',
@@ -361,7 +346,7 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .cct-accordion-item' => 'border-width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .cct-tab-title' => 'border-width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -372,7 +357,7 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
                 'label' => esc_html__('Border Color', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .cct-accordion-item' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .cct-tab-title' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -393,7 +378,7 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .cct-accordion-item' => 'border-radius: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .cct-tab-title' => 'border-radius: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -411,7 +396,7 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'typography_title1',
-                'selector' => '{{WRAPPER}} .main-title-faqs ',
+                'selector' => '{{WRAPPER}} .cct-faqs-title',
             ]
         );
 
@@ -595,10 +580,6 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
 
         }
 
-        if ($settings['title']) {
-            $html[] = '<div class="main-title-faqs">'.$settings['title'] .'</div>';
-
-        }
         $html[] = '</div>';
         $html[] = '</div>';
         $html[] = '</div>';
@@ -638,6 +619,8 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
         'id' => 'cct-tab-title-' . $id_int . $tab_count,
         'class' => [ 'cct-tab-title' ],
         'data-tab' => $tab_count,
+        'data-toggle' => 'collapse',
+        'href' => '#cct-tab-content-'. $id_int. $tab_count,
         'role' => 'tab',
         'aria-controls' => 'cct-tab-content-' . $id_int . $tab_count,
         'aria-expanded' => 'false',
@@ -674,10 +657,10 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
             <span class="cct-accordion-icon-opened"><i class="fas fa-minus-circle"></i></span>
         </span>
         <?php endif; ?>
-        <div class="cct-faqs-title" href=""><?php echo $item['tab_title']; ?></div>
+        <div class="cct-faqs-title" href=""><?php echo $item['tab_title_purchase']; ?></div>
     </div>
     <div class="line"></div>
-    <div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); ?>><?php echo $this->parse_text_editor( $item['tab_content'] ); ?></div>
+    <div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); ?>><?php echo $this->parse_text_editor( $item['tab_content_purchase'] ); ?></div>
     </div>
 
 <?php endforeach; ?>
@@ -687,7 +670,7 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
                  <!-- start tab -->
     <div id="payment" class="tab-pane fade">
     <?php
-    foreach ( $settings['tabs_purchase'] as $index => $item ) :
+    foreach ( $settings['tabs_payment'] as $index => $item ) :
     $tab_count = $index + 1;
 
     $tab_title_setting_key = $this->get_repeater_setting_key( 'tab_title', 'tabs', $index );
@@ -696,7 +679,8 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
     $this->add_render_attribute( $tab_title_setting_key, [
         'id' => 'cct-tab-title-' . $id_int . $tab_count,
         'class' => [ 'cct-tab-title' ],
-        'data-tab' => $tab_count,
+        'data-toggle' => 'collapse',
+        'href'=> '#'. $id_int,
         'role' => 'tab',
         'aria-controls' => 'cct-tab-content-' . $id_int . $tab_count,
         'aria-expanded' => 'false',
@@ -705,8 +689,7 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
 
     $this->add_render_attribute( $tab_content_setting_key, [
         'id' => 'cct-tab-content-' . $id_int . $tab_count,
-        'class' => [ 'cct-tab-conten t', 'cct-clearfix' ],
-        'data-tab' => $tab_count,
+        'class' => [ 'cct-tab-content collapse', 'cct-clearfix' ],
         'role' => 'tabpanel',
         'aria-labelledby' => 'cct-tab-title-' . $id_int . $tab_count,
     ] );
@@ -733,10 +716,10 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
             <span class="cct-accordion-icon-opened"><i class="fas fa-minus-circle"></i></span>
         </span>
         <?php endif; ?>
-        <div class="cct-faqs-title" href=""><?php echo $item['tab_title']; ?></div>
+        <div class="cct-faqs-title" href=""><?php echo $item['tab_title_payment']; ?></div>
     </div>
     <div class="line"></div>
-    <div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); ?>><?php echo $this->parse_text_editor( $item['tab_content'] ); ?></div>
+    <div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); ?>><?php echo $this->parse_text_editor( $item['tab_content_payment'] ); ?></div>
 </div>
 
 
