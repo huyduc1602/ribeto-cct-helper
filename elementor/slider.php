@@ -384,11 +384,11 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
                     <img src="{{{ item.image.url }}}" style="position: relative;">
                     <div class="slider-content-box">
                         <div class="slider-content-box-text">
-	                        <h2 class="slider-content-box-text-title">{{{ item.list_title }}}</h2>
-	                        <h4 class="slider-content-box-text-descrition">{{{ item.item_description }}}</h4>	                       
+	                        <h2 class="slider-content-box-text-title">{{ item.list_title }}</h2>
+	                        <h4 class="slider-content-box-text-descrition">{{ item.item_description }}</h4>	                       
                     	</div>
                     	 <div class="slider-content-box-button">
-                            <a class="btn btn-slider" href="{{{ item.button_link }}}">{{{ item.button_title }}}</a>
+                            <a class="btn btn-slider" href="{{ item.button_link }}">{{ item.button_title }}</a>
                          </div>
                     </div>
                 </div>
