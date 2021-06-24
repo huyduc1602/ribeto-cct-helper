@@ -46,7 +46,17 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
-
+        $this->add_control(
+			'show_content',
+			[
+				'label' => __( 'Text display', 'plugin-domain' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => __( 'Show', 'ribeto-helper' ),
+				'label_off' => __( 'Hide', 'ribeto-helper' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+			]
+		);
         $repeater = new \Elementor\Repeater();
         $repeater->add_control(
             'image',
@@ -354,8 +364,9 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
                 $html[] = '<div class="item">';
             }
             $html[] = ' <div class="slider-content-box-container" >';
-            $html[] = '<img src="'. $item['image']['url'] .'" style="position: relative;">
-                    <div class="slider-content-box">
+            $html[] = '<img src="'. $item['image']['url'] .'" style="position: relative;">';
+            if ( 'yes' === $settings['show_content'] ) {
+                $html[] = ' <div class="slider-content-box">
                         <div class="slider-content-box-text">
 	                        <h2 class="slider-content-box-text-title">'. $item['item_title'] .'</h2>
 	                        <h4 class="slider-content-box-text-descrition">'. $item['item_description'] .'</h4>	                       
@@ -363,8 +374,9 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
                     	 <div class="slider-content-box-button">
                             <a class="btn btn-slider" href="'. $item['button_link'] .'">'. $item['button_title'] .'</a>
                          </div>
-                    </div>
-                </div>
+                    </div>';
+            }
+            $html[] = '</div>
             </div>';
         }
         $html[] = '</div></div>';
