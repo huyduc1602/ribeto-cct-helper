@@ -74,17 +74,11 @@ CSF::createSection(CCT_OPTIONS, [
             'default' => '検索キーワードを入力',
         ),
         array(
-            'id' => 'text_support_update',
-            'type' => 'text',
-            'title' => esc_html__('Text Support & Update', 'cct-helper'),
-        ),
-        array(
             'id' => 'placeholder_category',
             'type' => 'text',
             'title' => esc_html__('Placeholder category', 'cct-helper'),
             'default' => '全カテゴリー',
         ),
-
         [
             'id' => 'cct_icon_cate1',
             'type' => 'media',
@@ -110,6 +104,12 @@ CSF::createSection(CCT_OPTIONS, [
                 'taxonomy'  => 'product_cat',
                 'posts_per_page' => -1
             ),
+        ),
+        array(
+            'id' => 'name_cate_all',
+            'type' => 'text',
+            'title' => esc_html__('Name cate all', 'cct-helper'),
+            'default' => '強化買取',
         ),
         [
             'id' => 'cct_header_sticky',
