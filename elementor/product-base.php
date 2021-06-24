@@ -407,16 +407,19 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
         $params = array(
             'posts_per_page' => $settings['limit'],
             'post_type' => array('product', 'product_variation'),
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'product_cat',
-                    'field'    => 'slug',
-                    'terms'    => array('accessories','tshirts'), 
-                ),
-            ),
+            
         );
+        if (!empty($settings['custom_products'])) {
+            $params = array(
+                'posts_per_page' => $settings['limit'],
+                'post_type' => array('product', 'product_variation'),
+                'post__in' => $settings['custom_products']
+            );
+        }
         if (!empty($settings['categories'])) {
             $params = array(
+                'posts_per_page' => $settings['limit'],
+                'post_type' => array('product', 'product_variation'),
                 'tax_query' => array(
                     array(
                         'taxonomy' => 'product_cat',
