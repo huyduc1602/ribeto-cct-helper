@@ -16,7 +16,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
 
     public function get_icon()
     {
-        return 'eicon-form';
+        return 'eicon-text';
     }
 
     public function get_categories()
@@ -143,7 +143,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
             [
                 'name' => 'typography_title',
                 'label' => esc_html__('Typography', 'cct-helper'),
-                'selector' => '{{WRAPPER}} .cct-helper_widget_form_field h2',
+                'selector' => '{{WRAPPER}} .cct_widget_form_field h2',
             ]
         );
 
@@ -153,7 +153,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
                 'label' => esc_html__('Color', 'cct-helper'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .cct-helper_widget_form_field h2' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .cct_widget_form_field h2' => 'color: {{VALUE}}'
                 ]
             ]
         );
@@ -170,7 +170,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
             [
                 'name' => 'typography_title_text',
                 'label' => esc_html__('Typography', 'cct-helper'),
-                'selector' => '{{WRAPPER}} .cct-helper_widget_form_field h1',
+                'selector' => '{{WRAPPER}} .cct_widget_form_field h1',
             ]
         );
 
@@ -180,7 +180,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
                 'label' => esc_html__('Color', 'cct-helper'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .cct-helper_widget_form_field h1' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .cct_widget_form_field h1' => 'color: {{VALUE}}'
                 ]
             ]
         );
@@ -207,7 +207,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
             [
                 'name' => 'typography_label',
                 'label' => esc_html__('Typography', 'cct-helper'),
-                'selector' => '{{WRAPPER}} .cct-helper_widget_form_field label',
+                'selector' => '{{WRAPPER}} .cct_widget_form_field label',
             ]
         );
 
@@ -217,7 +217,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
                 'label' => esc_html__('Color', 'cct-helper'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .cct-helper_widget_form_field label' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .cct_widget_form_field label' => 'color: {{VALUE}}'
                 ]
             ]
         );
@@ -235,7 +235,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
             [
                 'name' => 'typography_placeholder',
                 'label' => esc_html__('Typography', 'cct-helper'),
-                'selector' => '{{WRAPPER}} .cct-helper_widget_form_field input,.cct-helper_widget_form_field textarea',
+                'selector' => '{{WRAPPER}} .cct_widget_form_field input,.cct_widget_form_field textarea',
             ]
         );
 
@@ -245,7 +245,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
                 'label' => esc_html__('Color', 'cct-helper'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .cct-helper_widget_form_field input,.cct-helper_widget_form_field textarea' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .cct_widget_form_field input,.cct_widget_form_field textarea' => 'color: {{VALUE}}'
 
                 ]
             ]
@@ -256,6 +256,26 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
             [
                 'label' => esc_html__('Description', 'cct-helper'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'typography_des',
+                'label' => esc_html__('Typography', 'cct-helper'),
+                'selector' => '{{WRAPPER}} .des-contact p',
+            ]
+        );
+
+        $this->add_control(
+            'color_des',
+            [
+                'label' => esc_html__('Color', 'cct-helper'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}  .des-contact p' => 'color: {{VALUE}}'
+
+                ]
             ]
         );
         $this->end_controls_section();
