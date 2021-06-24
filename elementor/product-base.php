@@ -421,12 +421,21 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
                 'posts_per_page' => $settings['limit'],
                 'post_type' => array('product', 'product_variation'),
                 'tax_query' => array(
+                    'relation' => 'OR',
                     array(
                         'taxonomy' => 'product_cat',
                         'field'    => 'slug',
                         'terms'    => $settings['categories'], 
                     ),
                 ),
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'slug',
+                        'terms' =>  $settings['categories'],
+                        'operator' => 'IN',
+                        )
+                    ),
             );
         }
         if ($settings['featured']=='yes') {
@@ -468,7 +477,7 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
                         <div class="col-product <?php echo $product->get_type(); ?><?php echo ( $swiper === true ) ? ' swiper-slide' : ""; ?>">
                             <div class="item-product">
                                 <?php echo '<a href="' . esc_url( get_the_permalink() ) . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">'; ?>
-                                <?php woocommerce_template_loop_product_thumbnail(); ?>
+                                <div class="product-img"><?php woocommerce_template_loop_product_thumbnail(); ?></div>
                                 <?php echo '<h5 class="' . esc_attr( 'woocommerce-loop-product__sku' ) . '">' .$sku. '</h5>'; ?>
                                 <?php echo '<h5 class="' . esc_attr( 'woocommerce-loop-product__title' ) . '">' . get_the_title() . '</h5>'; ?>
                                 <div class="row">
