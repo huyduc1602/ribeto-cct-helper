@@ -69,6 +69,14 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
             ]
         );
         $repeater->add_control(
+            'image_link',
+            [
+                'label' => esc_html__('Image link', 'ribeto-helper'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => '#',
+            ]
+        );
+        $repeater->add_control(
             'item_title',
             [
                 'label' => esc_html__( 'Title', 'ribeto-helper' ),
@@ -99,7 +107,7 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
         $repeater->add_control(
             'button_link',
             [
-                'label' => esc_html__('Link button', 'ribeto-helper'),
+                'label' => esc_html__('Button link', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => '#',
             ]
@@ -363,9 +371,9 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
             }else{
                 $html[] = '<div class="item">';
             }
-            $html[] = ' <div class="slider-content-box-container" >';
-            $html[] = '<img src="'. $item['image']['url'] .'" style="position: relative;">';
+            $html[] = ' <div class="slider-content-box-container" >';           
             if ( 'yes' === $settings['show_content'] ) {
+                $html[] = '<img src="'. $item['image']['url'] .'" style="position: relative;">';
                 $html[] = ' <div class="slider-content-box">
                         <div class="slider-content-box-text">
 	                        <h2 class="slider-content-box-text-title">'. $item['item_title'] .'</h2>
@@ -375,6 +383,8 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
                             <a class="btn btn-slider" href="'. $item['button_link'] .'">'. $item['button_title'] .'</a>
                          </div>
                     </div>';
+            }else{
+                $html[] = '<a href="'.$item['image_link'].'"><img src="'. $item['image']['url'] .'" style="position: relative;"></a>';
             }
             $html[] = '</div>
             </div>';
