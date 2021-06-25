@@ -101,7 +101,7 @@ class CCT_Elementor_Widget_Link_Download extends \Elementor\Widget_Base
         global $product;
         $settings = $this->get_settings_for_display();
         $html = array();
-        $linkdownload = $product->get_downloads();
+        $linkdownload = "#";//$product->get_downloads()
         $html[] = '<div class="cct-elementor-button-link-download">';
         $html[] = '<div class="item-content">';
         if(!empty($linkdownload)) {
