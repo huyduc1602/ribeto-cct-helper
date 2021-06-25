@@ -224,7 +224,7 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Title & Description', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__('Accordion Title', 'ribeto-helper'),
+                'default' => esc_html__('FAQ Title', 'ribeto-helper'),
                 'dynamic' => [
                     'active' => true,
                 ],
@@ -237,7 +237,7 @@ class CCT_Elementor_Widget_FAQS extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__('Content', 'ribeto-helper'),
                 'type' => \Elementor\Controls_Manager::WYSIWYG,
-                'default' => esc_html__('Accordion Content', 'ribeto-helper'),
+                'default' => esc_html__('FAQ Content', 'ribeto-helper'),
                 'show_label' => false,
             ]
         );
@@ -612,13 +612,12 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
     foreach ( $settings['tabs_purchase'] as $index => $item ) :
     $tab_count = $index + 1;
 
-    $tab_title_setting_key = $this->get_repeater_setting_key( 'tab_title', 'tabs', $index );
+    $tab_title_setting_key = $this->get_repeater_setting_key( 'tab_title_purchase', 'tabs', $index );
 
-    $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content', 'tabs', $index );
+    $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content_purchase', 'tabs', $index );
     $this->add_render_attribute( $tab_title_setting_key, [
         'id' => 'cct-tab-title-' . $id_int . $tab_count,
         'class' => [ 'cct-tab-title' ],
-        'data-tab' => $tab_count,
         'data-toggle' => 'collapse',
         'href' => '#cct-tab-content-'. $id_int. $tab_count,
         'role' => 'tab',
@@ -630,7 +629,6 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
     $this->add_render_attribute( $tab_content_setting_key, [
         'id' => 'cct-tab-content-' . $id_int . $tab_count,
         'class' => [ 'cct-tab-content', 'cct-clearfix' ],
-        'data-tab' => $tab_count,
         'role' => 'tabpanel',
         'aria-labelledby' => 'cct-tab-title-' . $id_int . $tab_count,
     ] );
@@ -673,14 +671,14 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
     foreach ( $settings['tabs_payment'] as $index => $item ) :
     $tab_count = $index + 1;
 
-    $tab_title_setting_key = $this->get_repeater_setting_key( 'tab_title', 'tabs', $index );
+    $tab_title_setting_key = $this->get_repeater_setting_key( 'tab_title_payment', 'tabs', $index );
 
-    $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content', 'tabs', $index );
+    $tab_content_setting_key = $this->get_repeater_setting_key( 'tab_content_payment', 'tabs', $index );
     $this->add_render_attribute( $tab_title_setting_key, [
         'id' => 'cct-tab-title-' . $id_int . $tab_count,
         'class' => [ 'cct-tab-title' ],
         'data-toggle' => 'collapse',
-        'href'=> '#'. $id_int,
+        'href' => '#cct-tab-content-'. $id_int. $tab_count,
         'role' => 'tab',
         'aria-controls' => 'cct-tab-content-' . $id_int . $tab_count,
         'aria-expanded' => 'false',
