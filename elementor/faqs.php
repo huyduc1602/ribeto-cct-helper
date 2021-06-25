@@ -677,6 +677,7 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
     $this->add_render_attribute( $tab_title_setting_key, [
         'id' => 'cct-tab-title-' . $id_int . $tab_count,
         'class' => [ 'cct-tab-title' ],
+        'data-tab' => $tab_count,
         'data-toggle' => 'collapse',
         'href' => '#cct-tab-content-'. $id_int. $tab_count,
         'role' => 'tab',
