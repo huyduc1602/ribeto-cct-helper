@@ -458,7 +458,7 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
         $settings = $this->get_settings_for_display();
         ?>
         <div class="title-swiper"><i class="fas fa-dot-circle"></i><h2><?php echo $settings['title'] ?></h2></div>
-            <div <?php echo isset($settings['slides_per_view_mobile']) ? 'data-limit-mobile='.$settings['slides_per_view_mobile'].' ' : ''; echo isset($settings['slides_per_view_tablet']) ? 'data-limit-tablet="3"' : '';echo isset($settings['slides_per_view']) ? 'data-limit-desktop='.$settings['slides_per_view'] . ' ' : '' ?> class="elementor-ctwp_products-wrapper<?php echo ( $swiper == true ) ? " swiper swiper-container" : ""; ?>">
+            <div <?php echo isset($settings['slides_per_view_mobile']) ? 'data-limit-mobile="2"' : ''; echo isset($settings['slides_per_view_tablet']) ? 'data-limit-tablet="3"' : '';echo isset($settings['slides_per_view']) ? 'data-limit-desktop='.$settings['slides_per_view'] . ' ' : '' ?> class="elementor-ctwp_products-wrapper<?php echo ( $swiper == true ) ? " swiper swiper-container" : ""; ?>">
                 <?php if ($swiper === true): ?>
                     <div class="swiper-wrapper">                   
                 <?php else: ?>
