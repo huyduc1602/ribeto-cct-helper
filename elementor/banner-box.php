@@ -249,7 +249,7 @@ class CCT_Elementor_Banner_Box extends \Elementor\Widget_Base {
             $html[] = '<div class="banner-box">
 			<div class="container">
 				<img src="'.$settings['image']['url'].'" alt="Snow" style="width:100%;">
-  				<div class="banner-box-button"><a class="btn btn-banner" href="'.$settings['button_link'].'">コスメ化粧品</a></div>
+  				<div class="banner-box-button"><a class="btn btn-banner" href="'.$settings['button_link'].'">'.$settings['button_title'].'</a></div>
 			</div>
 		</div>';
 
