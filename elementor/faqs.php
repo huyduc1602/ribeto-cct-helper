@@ -719,8 +719,16 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
 							</span>
         <?php else: ?>
         <span class="cct-accordion-icon cct-accordion-icon-left" aria-hidden="true">
-		    <span class="cct-accordion-icon-closed"><i class="fas fa-plus-circle"></i></span>
-            <span class="cct-accordion-icon-opened"><i class="fas fa-minus-circle"></i></span>
+		    <span class="cct-accordion-icon-closed">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM6.4 12.8H17.6V11.2H6.4V12.8Z" fill="white"/>
+                </svg>
+            </span>
+            <span class="cct-accordion-icon-opened">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM6.4 12.8H17.6V11.2H6.4V12.8Z" fill="white"/>
+                </svg>
+            </span>
         </span>
         <?php endif; ?>
         <div class="cct-faqs-title" href=""><?php echo $item['tab_title_payment']; ?></div>
