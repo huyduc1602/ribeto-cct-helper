@@ -26,7 +26,7 @@ if ( ! function_exists( 'cct_my_custom_css_admin_area' ) ) {
 	add_action('admin_head', 'cct_my_custom_css_admin_area');
 	function cct_my_custom_css_admin_area() {
 		echo '<style>
-		#toplevel_page_woocommerce{display: none}.parent-menu-check{top:auto!important;left:0px!important;position:relative!important}
+		#toplevel_page_woocommerce, #menu-posts-elementor_library, #toplevel_page_elementor{display: none}.parent-menu-check{top:auto!important;left:0px!important;position:relative!important}
   		</style>';
 	}
 }

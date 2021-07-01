@@ -44,6 +44,22 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
                 'default' => '強化買取'
             ]
         );
+        $this->add_control(
+            'showall',
+            [
+                'label' => esc_html__('Show all Title', 'ribeto-helper'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => 'すべて表示'
+            ]
+        );
+        $this->add_control(
+            'showall-link',
+            [
+                'label' => esc_html__('Show all Link', 'ribeto-helper'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => '#'
+            ]
+        );
 
         $this->end_controls_section();
         $this->start_controls_section(
@@ -457,8 +473,8 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
     protected function ctwp_template($wc_query,$swiper) {
         $settings = $this->get_settings_for_display();
         ?>
-        <div class="title-swiper"><i class="fas fa-dot-circle"></i><h2><?php echo $settings['title'] ?></h2></div>
-            <div <?php echo isset($settings['slides_per_view_mobile']) ? 'data-limit-mobile='.$settings['slides_per_view_mobile'].' ' : ''; echo isset($settings['slides_per_view_tablet']) ? 'data-limit-tablet='.$settings['slides_per_view_tablet'] . ' ' : '';echo isset($settings['slides_per_view']) ? 'data-limit-desktop='.$settings['slides_per_view'] . ' ' : '' ?> class="elementor-ctwp_products-wrapper<?php echo ( $swiper == true ) ? " swiper swiper-container" : ""; ?>">
+        <div class="title-swiper"><i class="fas fa-dot-circle"></i><h2><?php echo $settings['title'] ?></h2><a href="<?php echo $settings['showall-link'] ?>" class="show-all"><?php echo $settings['showall'] ?><i class="fas fa-angle-double-right"></i></a></div>
+            <div <?php echo isset($settings['slides_per_view_mobile']) ? 'data-limit-mobile="2"' : ''; echo isset($settings['slides_per_view_tablet']) ? 'data-limit-tablet="3"' : '';echo isset($settings['slides_per_view']) ? 'data-limit-desktop='.$settings['slides_per_view'] . ' ' : '' ?> class="elementor-ctwp_products-wrapper<?php echo ( $swiper == true ) ? " swiper swiper-container" : ""; ?>">
                 <?php if ($swiper === true): ?>
                     <div class="swiper-wrapper">                   
                 <?php else: ?>
