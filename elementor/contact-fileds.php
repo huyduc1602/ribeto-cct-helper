@@ -296,22 +296,7 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
         if ($settings['title_sec']) {
             $html[] = '<h1>' . $settings['title_sec'] . '</h1>';
         }
-
-        if ($settings['list']) {
-            $html[] = '<form action="#">';
-            $end = array_pop($settings['list']);
-            foreach ($settings['list'] as $item) {
-                $html[] = '<label  for="' . $item['list_label'] . '">' . $item['list_label'] . '</label><br>';
-                $html[] = '<input type="text" id="' . $item['list_label'] . '" name="' . $item['list_label'] . '" placeholder="' . $item['list_placeholder'] .  '" required ><br>';
-            }
-            $html[] = '<label  for="' . $end['list_label'] . '">' . $end['list_label'] . '</label><br>';
-            $html[] = '<textarea name="' . $end['list_label'] . '" id="' . $end['list_label'] . '" placeholder="' . $end['list_placeholder'] . ' " rows="4" required></textarea><br>';
-            $html[] = '</form>';
-        }
-        if ($settings['description']) {
-            $html[] = '<div class="des-contact">'. $settings['description'] .'</div>';
-        }
-
+        $html[]='[contact-form-7 id="956" title="Contact form 1"]';
         $html[] = '</div>';
         echo implode('', $html);
 
