@@ -309,12 +309,21 @@ CSF::createSection(CCT_OPTIONS, [
             'type' => 'icon',
             'title' => 'Icon Facebook',
         ),
+        [
+            'id' => 'cct_footer_link_fb',
+            'type' => 'text',
+            'title' => esc_html__('Link facebook', 'cct-helper'),
+        ],
         array(
             'id' => 'cct_footer_icon_tw',
             'type' => 'icon',
             'title' => 'Icon twitter',
         ),
-
+        [
+            'id' => 'cct_footer_link_twitter',
+            'type' => 'text',
+            'title' => esc_html__('Link twitter', 'cct-helper'),
+        ],
         [
             'id' => 'cct_footer_title_col_2',
             'type' => 'text',
