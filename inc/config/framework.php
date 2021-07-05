@@ -116,6 +116,19 @@ CSF::createSection(CCT_OPTIONS, [
             'type' => 'switcher',
             'title' => 'Header fixed',
         ],
+
+        [
+            'id' => 'cct_flag_el',
+            'type' => 'media',
+            'title' => esc_html__('Flag English', 'cct-helper'),
+        ],
+
+        [
+            'id' => 'cct_flag_jp',
+            'type' => 'media',
+            'title' => esc_html__('Flag Japan', 'cct-helper'),
+        ],
+
     ]
 ]);
 
