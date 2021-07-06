@@ -4,7 +4,7 @@ if ( ! function_exists( 'cct_remove_menu_not_use' ) ) {
 	add_action( 'admin_menu', 'cct_remove_menu_not_use' );
 	function cct_remove_menu_not_use() {
 		remove_menu_page( 'edit-comments.php' );
-		remove_menu_page( 'themes.php' );
+		//remove_menu_page( 'themes.php' );
 		remove_menu_page( 'tools.php' );
 		remove_menu_page( 'wc-admin' );
 	}
