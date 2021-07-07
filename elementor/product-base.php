@@ -486,7 +486,7 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
                         $wc_query->the_post();
                         $product = wc_get_product( get_the_ID() );        
                         $sku =  $product->get_sku();  
-                        $price =  $product->get_price(); 
+                        $price =  $product->get_price_html(); 
                         $stock = $product->get_stock_quantity();
 
                         ?>
@@ -497,7 +497,7 @@ class CCT_Elementor_Widget_Products_Base extends Widget_Base
                                 <?php echo '<h5 class="' . esc_attr( 'woocommerce-loop-product__sku' ) . '">' .$sku. '</h5>'; ?>
                                 <?php echo '<h5 class="' . esc_attr( 'woocommerce-loop-product__title' ) . '">' . get_the_title() . '</h5>'; ?>
                                 <div class="row">
-                                    <?php echo '<h5 class="col-md-6 ' . esc_attr( 'woocommerce-loop-product__price' ) . '">' . $price . '円</h5>'; ?>
+                                    <?php echo '<h5 class="col-md-6 ' . esc_attr( 'woocommerce-loop-product__price' ) . '">' . $price . '</h5>'; ?>
                                     <?php echo '<h5 class="col-md-6 ' . esc_attr( 'woocommerce-loop-product__stock' ) . '">残り数量  ' . $stock . '</h5>'; ?>
                                 </div>
                                 <?php echo '</a>'; ?>
