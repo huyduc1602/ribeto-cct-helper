@@ -661,3 +661,21 @@ CSF::createSection(CCT_OPTIONS, [
 
     ]
 ]);
+CSF::createSection(CCT_OPTIONS, [
+    'title' => esc_html__('Shopping guide', 'cct-helper'),
+    'icon' => 'fa fa-bars',
+    'id' => 'fields_shopping_guide',
+    'fields' => [
+        array(
+            'id'    => 'opt-upload-file-v1',
+            'type'  => 'upload',
+            'title' => 'Upload file 1',
+        ),
+        array(
+            'id'    => 'opt-upload-file-v2',
+            'type'  => 'upload',
+            'title' => 'Upload file 2',
+        ),
+
+    ]
+]);
