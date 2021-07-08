@@ -79,11 +79,11 @@ CSF::createSection(CCT_OPTIONS, [
             'title' => esc_html__('Placeholder category', 'cct-helper'),
             'default' => '全カテゴリー',
         ),
-        [
-            'id' => 'cct_icon_cate1',
-            'type' => 'media',
-            'title' => esc_html__('Icon cate 1', 'cct-helper'),
-        ],
+//        [
+//            'id' => 'cct_icon_cate1',
+//            'type' => 'media',
+//            'title' => esc_html__('Icon cate 1', 'cct-helper'),
+//        ],
         [
             'id' => 'cct_img_breadcrumb',
             'type' => 'media',
