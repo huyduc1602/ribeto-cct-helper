@@ -57,22 +57,22 @@ if ( ! function_exists( 'cct_add_menu_order_setting_report_woo' ) ) {
 	function cct_add_menu_order_setting_report_woo() {
 		add_submenu_page(
 			'edit.php?post_type=product',
-			esc_html__('Order Management', 'cct'),
-			esc_html__('Order Management', 'cct'),
+			esc_html__('注文', 'cct'),
+			esc_html__('注文', 'cct'),
 			'manage_woocommerce', // Required user capability
 			'edit.php?post_type=shop_order',
 		);
 		add_submenu_page(
 			'edit.php?post_type=product',
-			__( 'Reports' ),
-			__( 'Reports' ),
+			__( 'レポート' ),
+			__( 'レポート' ),
 			'manage_woocommerce', // Required user capability
 			'admin.php?page=wc-reports',
 		);
 		add_submenu_page(
 			'edit.php?post_type=product',
-			esc_html__('Setting', 'cct'),
-			esc_html__('Setting', 'cct'),
+			esc_html__('設定', 'cct'),
+			esc_html__('設定', 'cct'),
 			'manage_woocommerce', // Required user capability
 			'admin.php?page=wc-settings',
 		);
