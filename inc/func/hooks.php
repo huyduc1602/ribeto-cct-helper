@@ -18,6 +18,8 @@ function authen(){
                 remove_menu_page( 'edit.php' );
                 remove_menu_page( 'edit.php?post_type=page' );
                 remove_menu_page( 'themes.php' );
+                remove_menu_page( 'wpcf7' ); 
+
 
 
                  //ẩn makerting và analytics
