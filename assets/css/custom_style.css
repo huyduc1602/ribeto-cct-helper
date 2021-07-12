@@ -13,3 +13,8 @@ section.wc-backbone-modal-main footer .inner .button-large{
 .order_data_column .edit_address {
     display: none;
 }
+
+.post-type-shop_order .page-title-action {
+    display: none;
+}
+
