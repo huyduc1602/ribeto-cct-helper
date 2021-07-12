@@ -19,15 +19,15 @@ CSF::createSection(CCT_PRODUCT_OPTIONS, array(
     'fields' => array(
 
         array(
-            'id'      => '_regular_price',
+            'id'      => '_price',
             'type'    => 'text',
-            'title'   => esc_html__('標準価格', 'cct-helper'),
+            'title'   => esc_html__('標準価格 ', 'cct-helper') .get_woocommerce_currency_symbol(),
 
         ),
         array(
-            'id'      => '_price',
+            'id'      => '_sale_price',
             'type'    => 'text',
-            'title'   => esc_html__('セール価格', 'cct-helper'),
+            'title'   => esc_html__('セール価格 ', 'cct-helper').get_woocommerce_currency_symbol(),
 
         ),
         array(
@@ -37,7 +37,7 @@ CSF::createSection(CCT_PRODUCT_OPTIONS, array(
 
         ),
         array(
-            'id'      => '_menage_stock',
+            'id'      => '_manage_stock',
             'type'    => 'checkbox',
             'title'   => esc_html__('在庫を管理しますか ?', 'cct-helper'),
             'label'   => esc_html__('商品単位での在庫管理を有効にする', 'cct-helper'),
