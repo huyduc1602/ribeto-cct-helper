@@ -9,42 +9,48 @@
 
 
 CSF::createMetabox(CCT_PRODUCT_OPTIONS, array(
-    'title'        => esc_html__('Custom Product Options', 'cct-helper'),
+    'title'        => esc_html__('商品データ', 'cct-helper'),
     'post_type'    => 'product',
     'data_type' => 'unserialize',
     'priority' => 'low',
     'context' => 'normal',
 ) );
 CSF::createSection(CCT_PRODUCT_OPTIONS, array(
-    'title'  => esc_html__('Product Detail', 'cct-helper'),
     'fields' => array(
 
         array(
-            'id'      => 'link-demo',
+            'id'      => '_regular_price',
             'type'    => 'text',
-            'title'   => esc_html__('Link Demo', 'cct-helper'),
-            'default' => '#',
+            'title'   => esc_html__('標準価格', 'cct-helper'),
+
+        ),
+        array(
+            'id'      => '_price',
+            'type'    => 'text',
+            'title'   => esc_html__('セール価格', 'cct-helper'),
+
+        ),
+        array(
+            'id'      => '_sku',
+            'type'    => 'text',
+            'title'   => esc_html__('SKU', 'cct-helper'),
+
+        ),
+        array(
+            'id'      => '_menage_stock',
+            'type'    => 'checkbox',
+            'title'   => esc_html__('在庫を管理しますか ?', 'cct-helper'),
+            'label'   => esc_html__('商品単位での在庫管理を有効にする', 'cct-helper'),
+            'default' => true // or false
+        ),
+        array(
+            'id'      => '_stock',
+            'type'    => 'number',
+            'title'   => esc_html__('在庫数', 'cct-helper'),
+
         ),
     ),
 
-
 ));
-CSF::createSection(CCT_PRODUCT_OPTIONS, array(
-    'title'  => esc_html__('Product Document', 'cct-helper'),
-    'fields' => array(
 
-        array(
-            'id'      => 'link-detail-document',
-            'type'    => 'text',
-            'title'   => esc_html__('Link Detail Document', 'cct-helper'),
-            'default' => '#',
-        ),
-        array(
-            'id'      => 'link-video-tutorials',
-            'type'    => 'text',
-            'title'   => esc_html__('Link Video Tutorials', 'cct-helper'),
-            'default' => '#',
-        ),
-    ),
-));
 
