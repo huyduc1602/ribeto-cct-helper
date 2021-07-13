@@ -113,3 +113,21 @@ add_action( 'admin_print_scripts', function() {
 	EOT;
 	}
 }, PHP_INT_MAX );
+
+if (!function_exists('cct_custom_name_order')) {
+    add_filter( 'woocommerce_admin_order_buyer_name', 'cct_custom_name_order', 10, 2 );
+    function cct_custom_name_order($buyer, $object) {
+        $buyer = '';
+        if ( $object->get_billing_first_name() || $object->get_billing_last_name() ) {
+            /* translators: 1: first name 2: last name */
+            $buyer = trim( sprintf( _x( '%1$s %2$s', 'full name', 'woocommerce' ), $object->get_billing_last_name(), $object->get_billing_first_name() ) );
+        } elseif ( $object->get_billing_company() ) {
+            $buyer = trim( $object->get_billing_company() );
+        } elseif ( $object->get_customer_id() ) {
+            $user  = get_user_by( 'id', $object->get_customer_id() );
+            $buyer = ucwords( $user->display_name );
+        }
+
+        return $buyer;
+    }
+}
