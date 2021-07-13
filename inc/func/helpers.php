@@ -26,3 +26,11 @@ function remove_products_admin_list_table_filters( $filters ){
 
     return $filters;
 }
+
+add_filter('manage_product_posts_columns', 'misha_hide_product_tags_column', 999 );
+
+function misha_hide_product_tags_column( $product_columns ) {
+    unset( $product_columns['product_tag'] );
+    unset( $product_columns['featured']);
+    return $product_columns;
+}
