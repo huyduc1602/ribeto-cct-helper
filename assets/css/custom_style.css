@@ -1,0 +1,33 @@
+section.wc-backbone-modal-main footer .inner .button-large{
+    display: none;
+}
+/*.wp-list-table td.order_number a.order-view {*/
+/*    pointer-events: none;*/
+/*}*/
+.order_data_column .form-field {
+ display: none;
+}
+.order_data_column .wc-order-status {
+    display: block;
+}
+.order_data_column .edit_address {
+    display: none;
+}
+#misc-publishing-actions {
+    display: none;
+}
+#minor-publishing-actions {
+    display: flex;
+    padding-bottom: 10px;
+}
+#minor-publishing-actions #preview-action{
+    margin: auto;
+}
+
+#_cct_product_options .csf-field-checkbox{
+    display: none;
+}
+
+.post-type-shop_order .page-title-action {
+    display: none;
+}
