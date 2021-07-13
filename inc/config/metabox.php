@@ -6,8 +6,6 @@
  * Time: 11:27 AM
  */
 
-
-
 CSF::createMetabox(CCT_PRODUCT_OPTIONS, array(
     'title'        => esc_html__('商品データ', 'cct-helper'),
     'post_type'    => 'product',
@@ -19,7 +17,7 @@ CSF::createSection(CCT_PRODUCT_OPTIONS, array(
     'fields' => array(
 
         array(
-            'id'      => '_price',
+            'id'      => '_regular_price',
             'type'    => 'text',
             'title'   => esc_html__('標準価格 ', 'cct-helper') .get_woocommerce_currency_symbol(),
 
