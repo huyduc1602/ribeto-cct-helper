@@ -23,12 +23,6 @@ CSF::createSection(CCT_PRODUCT_OPTIONS, array(
 
         ),
         array(
-            'id'      => '_sale_price',
-            'type'    => 'text',
-            'title'   => esc_html__('セール価格 ', 'cct-helper').get_woocommerce_currency_symbol(),
-
-        ),
-        array(
             'id'      => '_sku',
             'type'    => 'text',
             'title'   => esc_html__('SKU', 'cct-helper'),
