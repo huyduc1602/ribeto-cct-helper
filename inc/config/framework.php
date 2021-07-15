@@ -513,6 +513,11 @@ CSF::createSection(CCT_OPTIONS, [
             'type' => 'wp_editor',
             'title' => esc_html__('Footer Absolute text', 'cct-helper'),
         ],
+        [
+            'id' => 'cct_footer_absoluteen',
+            'type' => 'wp_editor',
+            'title' => esc_html__('Footer Absolute text en', 'cct-helper'),
+        ],
     ]
 ]);
 CSF::createSection(CCT_OPTIONS, [
