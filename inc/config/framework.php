@@ -45,6 +45,12 @@ CSF::createSection(CCT_OPTIONS, [
             'default' => '伊勢崎本店:',
         ),
         array(
+            'id' => 'text_logo_phoneen',
+            'type' => 'text',
+            'title' => esc_html__('Text phone EN', 'cct-helper'),
+            'default' => '伊勢崎本店:',
+        ),
+        array(
             'id' => 'number_logo_phone',
             'type' => 'text',
             'title' => esc_html__('Number phone', 'cct-helper'),
@@ -62,9 +68,21 @@ CSF::createSection(CCT_OPTIONS, [
             'default' => '受付時間:',
         ),
         array(
+            'id' => 'text_logo_timeen',
+            'type' => 'text',
+            'title' => esc_html__('Text time en', 'cct-helper'),
+            'default' => '受付時間:',
+        ),
+        array(
             'id' => 'number_logo_time',
             'type' => 'text',
             'title' => esc_html__('Number time', 'cct-helper'),
+            'default' => '9:00～17:00(平日):',
+        ),
+        array(
+            'id' => 'number_logo_timeen',
+            'type' => 'text',
+            'title' => esc_html__('Number time EN', 'cct-helper'),
             'default' => '9:00～17:00(平日):',
         ),
         array(
@@ -74,9 +92,21 @@ CSF::createSection(CCT_OPTIONS, [
             'default' => '検索キーワードを入力',
         ),
         array(
+            'id' => 'placeholder_searchen',
+            'type' => 'text',
+            'title' => esc_html__('Placeholder search en', 'cct-helper'),
+            'default' => '検索キーワードを入力',
+        ),
+        array(
             'id' => 'placeholder_category',
             'type' => 'text',
             'title' => esc_html__('Placeholder category', 'cct-helper'),
+            'default' => '全カテゴリー',
+        ),
+        array(
+            'id' => 'placeholder_categoryen',
+            'type' => 'text',
+            'title' => esc_html__('Placeholder category en', 'cct-helper'),
             'default' => '全カテゴリー',
         ),
 //        [
@@ -92,25 +122,25 @@ CSF::createSection(CCT_OPTIONS, [
 
 
         array(
-            'id'          => 'cct_get_cate_all',
-            'type'        => 'select',
-            'title'     => esc_html__('Select the product category to display', 'cct-helper'),
-            'options'     => 'categories',
-            'chosen'      => true,
-            'ajax'        => false,
-            'multiple'    => true,
-            'class'       => 'require',
-            'query_args'  => array(
-                'taxonomy'  => 'product_cat',
+            'id' => 'cct_get_cate_all',
+            'type' => 'select',
+            'title' => esc_html__('Select the product category to display', 'cct-helper'),
+            'options' => 'categories',
+            'chosen' => true,
+            'ajax' => false,
+            'multiple' => true,
+            'class' => 'require',
+            'query_args' => array(
+                'taxonomy' => 'product_cat',
                 'posts_per_page' => -1
             ),
         ),
-        array(
-            'id' => 'name_cate_all',
-            'type' => 'text',
-            'title' => esc_html__('Name cate all', 'cct-helper'),
-            'default' => '強化買取',
-        ),
+//        array(
+//            'id' => 'name_cate_all',
+//            'type' => 'text',
+//            'title' => esc_html__('Name cate all', 'cct-helper'),
+//            'default' => '強化買取',
+//        ),
         [
             'id' => 'cct_header_sticky',
             'type' => 'switcher',
@@ -161,26 +191,43 @@ CSF::createSection(CCT_OPTIONS, array(
         ),
 
         array(
-            'id'        => 'cct_single_product_buy',
-            'type'      => 'group',
-            'title'     => esc_html__('Single Product Step Sidebar', 'cct-helper'),
-            'fields'    => array(
+            'id' => 'cct_single_product_title_sidebar_en',
+            'type' => 'text',
+            'title' => esc_html__('Single Product Title Sidebar EN', 'cct-helper'),
+        ),
+
+        array(
+            'id' => 'cct_single_product_buy',
+            'type' => 'group',
+            'title' => esc_html__('Single Product Step Sidebar', 'cct-helper'),
+            'fields' => array(
                 array(
-                    'id'    => 'cct_single_product_title',
-                    'type'  => 'text',
+                    'id' => 'cct_single_product_title',
+                    'type' => 'text',
                     'title' => esc_html__('Single Product Title', 'cct-helper'),
+                ),
+                array(
+                    'id' => 'cct_single_product_title_en',
+                    'type' => 'text',
+                    'title' => esc_html__('Single Product Title EN', 'cct-helper'),
                 ),
 
                 array(
-                    'id'    => 'cct_single_product_image',
-                    'type'  => 'media',
+                    'id' => 'cct_single_product_image',
+                    'type' => 'media',
                     'title' => esc_html__('Single Product Image', 'cct-helper'),
                 ),
 
                 array(
-                    'id'    => 'cct_single_product_description',
-                    'type'  => 'wp_editor',
+                    'id' => 'cct_single_product_description',
+                    'type' => 'wp_editor',
                     'title' => esc_html__('Single Product Description', 'cct-helper'),
+                ),
+
+                array(
+                    'id' => 'cct_single_product_description_en',
+                    'type' => 'wp_editor',
+                    'title' => esc_html__('Single Product Description EN', 'cct-helper'),
                 ),
             ),
         ),
@@ -261,9 +308,20 @@ CSF::createSection(CCT_OPTIONS, [
             'title' => esc_html__('Title Col 1', 'cct-helper'),
         ],
         [
+            'id' => 'cct_footer_title_col_1en',
+            'type' => 'text',
+            'title' => esc_html__('Title Col 1 EN', 'cct-helper'),
+        ],
+
+        [
             'id' => 'cct_footer_location',
             'type' => 'text',
             'title' => esc_html__('Location', 'cct-helper'),
+        ],
+        [
+            'id' => 'cct_footer_locationen',
+            'type' => 'text',
+            'title' => esc_html__('Location EN', 'cct-helper'),
         ],
         [
             'id' => 'cct_footer_location_de1',
@@ -275,13 +333,21 @@ CSF::createSection(CCT_OPTIONS, [
             'type' => 'text',
             'title' => esc_html__('Location description 2', 'cct-helper'),
         ],
-
+        [
+            'id' => 'cct_footer_location_de2en',
+            'type' => 'text',
+            'title' => esc_html__('Location description 2 EN', 'cct-helper'),
+        ],
         [
             'id' => 'cct_footer_phone',
             'type' => 'text',
             'title' => esc_html__('Phone', 'cct-helper'),
         ],
-
+        [
+            'id' => 'cct_footer_phoneen',
+            'type' => 'text',
+            'title' => esc_html__('Phone EN', 'cct-helper'),
+        ],
         [
             'id' => 'cct_footer_phone_de',
             'type' => 'text',
@@ -293,7 +359,11 @@ CSF::createSection(CCT_OPTIONS, [
             'type' => 'text',
             'title' => esc_html__('Mail', 'cct-helper'),
         ],
-
+        [
+            'id' => 'cct_footer_mailen',
+            'type' => 'text',
+            'title' => esc_html__('Mail EN', 'cct-helper'),
+        ],
         [
             'id' => 'cct_footer_mail_de',
             'type' => 'text',
@@ -303,6 +373,11 @@ CSF::createSection(CCT_OPTIONS, [
             'id' => 'cct_footer_follow_us',
             'type' => 'text',
             'title' => esc_html__('Follow Us', 'cct-helper'),
+        ],
+        [
+            'id' => 'cct_footer_follow_usen',
+            'type' => 'text',
+            'title' => esc_html__('Follow Us EN', 'cct-helper'),
         ],
         array(
             'id' => 'cct_footer_icon_fb',
@@ -330,16 +405,30 @@ CSF::createSection(CCT_OPTIONS, [
             'title' => esc_html__('Title Col 2', 'cct-helper'),
         ],
         [
+            'id' => 'cct_footer_title_col_2en',
+            'type' => 'text',
+            'title' => esc_html__('Title Col 2 EN', 'cct-helper'),
+        ],
+        [
             'id' => 'cct_footer_title_col_3',
             'type' => 'text',
             'title' => esc_html__('Title Col 3', 'cct-helper'),
         ],
-
+        [
+            'id' => 'cct_footer_title_col_3en',
+            'type' => 'text',
+            'title' => esc_html__('Title Col 3 EN', 'cct-helper'),
+        ],
 
         [
             'id' => 'cct_footer_title_col_4',
             'type' => 'text',
             'title' => esc_html__('Title Col 4', 'cct-helper'),
+        ],
+        [
+            'id' => 'cct_footer_title_col_4en',
+            'type' => 'text',
+            'title' => esc_html__('Title Col 4 EN', 'cct-helper'),
         ],
         array(
             'id' => 'opt-group-footer-col-4-info',
@@ -350,6 +439,19 @@ CSF::createSection(CCT_OPTIONS, [
                     'id' => 'opt-link-footer',
                     'type' => 'link',
                     'title' => 'Link',
+                ),
+            ),
+        ),
+
+        array(
+            'id' => 'opt-group-footer-col-4-infoen',
+            'type' => 'group',
+            'title' => 'Group link info en',
+            'fields' => array(
+                array(
+                    'id' => 'opt-link-footeren',
+                    'type' => 'link',
+                    'title' => 'Link en',
                 ),
             ),
         ),
@@ -376,6 +478,12 @@ CSF::createSection(CCT_OPTIONS, [
             'type' => 'text',
             'title' => esc_html__('Text title mail', 'cct-helper'),
         ),
+        array(
+            'id' => 'text_title_mail1en',
+            'type' => 'text',
+            'title' => esc_html__('Text title mail en', 'cct-helper'),
+        ),
+
         array(
             'id' => 'placeholder_mail1',
             'type' => 'text',
@@ -404,6 +512,11 @@ CSF::createSection(CCT_OPTIONS, [
             'id' => 'cct_footer_absolute',
             'type' => 'wp_editor',
             'title' => esc_html__('Footer Absolute text', 'cct-helper'),
+        ],
+        [
+            'id' => 'cct_footer_absoluteen',
+            'type' => 'wp_editor',
+            'title' => esc_html__('Footer Absolute text en', 'cct-helper'),
         ],
     ]
 ]);
@@ -667,13 +780,13 @@ CSF::createSection(CCT_OPTIONS, [
     'id' => 'fields_shopping_guide',
     'fields' => [
         array(
-            'id'    => 'opt-upload-file-v1',
-            'type'  => 'upload',
+            'id' => 'opt-upload-file-v1',
+            'type' => 'upload',
             'title' => 'Upload file 1',
         ),
         array(
-            'id'    => 'opt-upload-file-v2',
-            'type'  => 'upload',
+            'id' => 'opt-upload-file-v2',
+            'type' => 'upload',
             'title' => 'Upload file 2',
         ),
 
