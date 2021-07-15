@@ -191,6 +191,12 @@ CSF::createSection(CCT_OPTIONS, array(
         ),
 
         array(
+            'id' => 'cct_single_product_title_sidebar_en',
+            'type' => 'text',
+            'title' => esc_html__('Single Product Title Sidebar EN', 'cct-helper'),
+        ),
+
+        array(
             'id' => 'cct_single_product_buy',
             'type' => 'group',
             'title' => esc_html__('Single Product Step Sidebar', 'cct-helper'),
@@ -199,6 +205,11 @@ CSF::createSection(CCT_OPTIONS, array(
                     'id' => 'cct_single_product_title',
                     'type' => 'text',
                     'title' => esc_html__('Single Product Title', 'cct-helper'),
+                ),
+                array(
+                    'id' => 'cct_single_product_title_en',
+                    'type' => 'text',
+                    'title' => esc_html__('Single Product Title EN', 'cct-helper'),
                 ),
 
                 array(
@@ -211,6 +222,12 @@ CSF::createSection(CCT_OPTIONS, array(
                     'id' => 'cct_single_product_description',
                     'type' => 'wp_editor',
                     'title' => esc_html__('Single Product Description', 'cct-helper'),
+                ),
+
+                array(
+                    'id' => 'cct_single_product_description_en',
+                    'type' => 'wp_editor',
+                    'title' => esc_html__('Single Product Description EN', 'cct-helper'),
                 ),
             ),
         ),
