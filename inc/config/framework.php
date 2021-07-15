@@ -79,11 +79,11 @@ CSF::createSection(CCT_OPTIONS, [
             'title' => esc_html__('Placeholder category', 'cct-helper'),
             'default' => '全カテゴリー',
         ),
-        [
-            'id' => 'cct_icon_cate1',
-            'type' => 'media',
-            'title' => esc_html__('Icon cate 1', 'cct-helper'),
-        ],
+//        [
+//            'id' => 'cct_icon_cate1',
+//            'type' => 'media',
+//            'title' => esc_html__('Icon cate 1', 'cct-helper'),
+//        ],
         [
             'id' => 'cct_img_breadcrumb',
             'type' => 'media',
@@ -657,6 +657,24 @@ CSF::createSection(CCT_OPTIONS, [
             'id' => 'opt-link-1000',
             'type' => 'link',
             'title' => 'Link kkkk',
+        ),
+
+    ]
+]);
+CSF::createSection(CCT_OPTIONS, [
+    'title' => esc_html__('Shopping guide', 'cct-helper'),
+    'icon' => 'fa fa-bars',
+    'id' => 'fields_shopping_guide',
+    'fields' => [
+        array(
+            'id'    => 'opt-upload-file-v1',
+            'type'  => 'upload',
+            'title' => 'Upload file 1',
+        ),
+        array(
+            'id'    => 'opt-upload-file-v2',
+            'type'  => 'upload',
+            'title' => 'Upload file 2',
         ),
 
     ]

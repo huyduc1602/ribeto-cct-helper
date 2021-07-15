@@ -19,6 +19,9 @@ if (!class_exists('CCT_Helper')) {
 			$this->load_helper();
 
 			add_action('init', array(__CLASS__, 'load_config'), 2);
+            if (is_admin()) {
+                add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
+            }
 		}
 
 		// define
@@ -55,6 +58,12 @@ if (!class_exists('CCT_Helper')) {
 			// load elementor
 			require_once CCT_HELPER_DIR_PATH . '/inc/func/elementor.php';
 		}
+
+        public function enqueue_admin_scripts()
+        {
+            wp_enqueue_style('cct_custom_style', CCT_HELPER_DIR_URL . 'assets/css/custom_style.css', array(), false);
+
+        }
 	}
 
 	new CCT_Helper();

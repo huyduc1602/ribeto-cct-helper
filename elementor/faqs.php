@@ -602,8 +602,8 @@ $id_int = substr( $this->get_id_int(), 0, 3 );
 ?>
 <div class="cct_widget_faqs" >
     <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a data-toggle="tab" href="#purchase">買取について</a></li>
-        <li><a data-toggle="tab" href="#payment">お支払いについて</a></li>
+        <li class="active"><a data-toggle="tab" href="#purchase"><?php echo $settings['title_purchase'] ?></a></li>
+        <li><a data-toggle="tab" href="#payment"><?php echo $settings['title_payment'] ?></a></li>
     </ul>
     <!-- start tab -->
     <div class="tab-content">

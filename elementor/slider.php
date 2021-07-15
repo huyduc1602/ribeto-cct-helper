@@ -384,7 +384,12 @@ class CCT_Elementor_Slider extends \Elementor\Widget_Base {
                          </div>
                     </div>';
             }else{
-                $html[] = '<a href="'.$item['image_link'].'"><img src="'. $item['image']['url'] .'" style="position: relative;"></a>';
+                if($item['image_link'] !=''){
+                    $html[] = '<a href="'.$item['image_link'].'"><img src="'. $item['image']['url'] .'" style="position: relative;"></a>';
+                }else{
+                    $html[] = '<img src="'. $item['image']['url'] .'" style="position: relative;">';
+                }
+                
             }
             $html[] = '</div>
             </div>';
