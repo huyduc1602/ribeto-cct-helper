@@ -296,7 +296,6 @@ class CCT_Elementor_Widget_Contact extends \Elementor\Widget_Base
         if ($settings['title_sec']) {
             $html[] = '<h1>' . $settings['title_sec'] . '</h1>';
         }
-
         $html[] = '</div>';
         echo implode('', $html);
 
