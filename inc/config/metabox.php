@@ -41,6 +41,12 @@ CSF::createSection(CCT_PRODUCT_OPTIONS, array(
             'title'   => esc_html__('在庫数', 'cct-helper'),
 
         ),
+        array(
+            'id'      => 'des_product',
+            'type'    => 'text',
+            'title'   => esc_html__('説明する', 'cct-helper'),
+            'default' => '1箱12箱',
+        ),
     ),
 
 ));
