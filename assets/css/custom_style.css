@@ -1,9 +1,10 @@
+section.wc-backbone-modal-main footer .inner .wc-action-button-group .wc-action-button-group__items a:not(:first-child) {
+   margin-left: 10px!important;
+}
+
 section.wc-backbone-modal-main footer .inner .button-large{
     display: none;
 }
-/*.wp-list-table td.order_number a.order-view {*/
-/*    pointer-events: none;*/
-/*}*/
 .order_data_column .form-field {
  display: none;
 }
