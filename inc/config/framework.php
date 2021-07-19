@@ -775,6 +775,21 @@ CSF::createSection(CCT_OPTIONS, [
     ]
 ]);
 CSF::createSection(CCT_OPTIONS, [
+    'title' => esc_html__('VAT', 'cct-helper'),
+    'icon' => 'fa fa-bars',
+    'id' => 'fields_vat',
+    'fields' => [
+        [
+            'id' => 'vat_title',
+            'type' => 'text',
+            'title' => esc_html__('Title EN','cct-helper'),
+            'default' => 'VAT'
+        ],
+
+    ]
+]);
+
+CSF::createSection(CCT_OPTIONS, [
     'title' => esc_html__('Shopping guide', 'cct-helper'),
     'icon' => 'fa fa-bars',
     'id' => 'fields_shopping_guide',
