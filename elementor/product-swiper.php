@@ -16,7 +16,7 @@ class CCT_Elementor_Widget_Products_Swiper extends CCT_Elementor_Widget_Products
 
     public function get_title()
     {
-        return __('Ribeto Products Swiper', 'ribeto-helper');
+        return esc_html__('Ribeto Products Swiper', 'cct-helper');
     }
 
     public function get_icon()
@@ -39,13 +39,13 @@ class CCT_Elementor_Widget_Products_Swiper extends CCT_Elementor_Widget_Products
         $this->start_controls_section(
             'swiper_settings',
                 [
-                    'label' => __('Swiper','ribeto-helper'),
+                    'label' =>  esc_html__('Swiper','cct-helper'),
                 ]
             );
         $this->add_responsive_control(
             'slides_per_view',
             [
-                'label' => __('Slides Per View', 'ribeto-helper'),
+                'label' =>  esc_html__('Slides Per View', 'cct-helper'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 1,
                 'max' => 20,
@@ -62,14 +62,14 @@ class CCT_Elementor_Widget_Products_Swiper extends CCT_Elementor_Widget_Products
         $this->start_controls_section(
             'ctwp_products_custom_query',
             [
-                'label' => __('Custom Query', 'ribeto-helper'),
+                'label' =>  esc_html__('Custom Query', 'cct-helper'),
             ]
         );
 
         $this->add_control(
             'custom_products',
             [
-                'label' => __('Custom Products', 'ribeto-helper'),
+                'label' =>  esc_html__('Custom Products', 'cct-helper'),
                 'label_block' => true,
                 'type' => Controls_Manager::SELECT2,
                 'multiple' => true,
@@ -82,7 +82,7 @@ class CCT_Elementor_Widget_Products_Swiper extends CCT_Elementor_Widget_Products
         $this->add_control(
             'categories',
             [
-                'label' => __('Categories', 'ribeto-helper'),
+                'label' =>  esc_html__('Categories', 'cct-helper'),
                 'label_block' => true,
                 'type' => Controls_Manager::SELECT2,
                 'multiple' => true,
@@ -95,7 +95,7 @@ class CCT_Elementor_Widget_Products_Swiper extends CCT_Elementor_Widget_Products
         $this->add_control(
             'featured',
             [
-                'label' => __('Featured', 'ribeto-helper'),
+                'label' =>  esc_html__('Featured', 'cct-helper'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'no' => __('No', 'ribeto-helper'),
