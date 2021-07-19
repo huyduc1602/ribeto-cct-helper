@@ -39,6 +39,7 @@ CSF::createSection(CCT_PRODUCT_OPTIONS, array(
             'id'      => '_stock',
             'type'    => 'number',
             'title'   => esc_html__('在庫数', 'cct-helper'),
+            'sanitize' => 'cct_sanitize_number_stock',
 
         ),
         array(

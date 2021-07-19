@@ -35,3 +35,8 @@ function misha_hide_product_tags_column( $product_columns ) {
     unset( $product_columns['price']);
     return $product_columns;
 }
+if (!function_exists('cct_sanitize_number_stock')):
+    function cct_sanitize_number_stock($value) {
+        return intval($value);
+    }
+endif;
